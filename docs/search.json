@@ -26,5 +26,61 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "I am a the best of all time. ( this will be replaced with something cool later."
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "CV",
+    "section": "TECHNICAL SKILLS",
+    "text": "TECHNICAL SKILLS\nR Programming, Python, …"
+  },
+  {
+    "objectID": "cv.html#work-history",
+    "href": "cv.html#work-history",
+    "title": "CV",
+    "section": "WORK HISTORY",
+    "text": "WORK HISTORY"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "CV",
+    "section": "EDUCATION",
+    "text": "EDUCATION"
+  },
+  {
+    "objectID": "cv.html#personal-projects",
+    "href": "cv.html#personal-projects",
+    "title": "CV",
+    "section": "PERSONAL PROJECTS",
+    "text": "PERSONAL PROJECTS"
+  },
+  {
+    "objectID": "cv.html#grants-and-awards",
+    "href": "cv.html#grants-and-awards",
+    "title": "CV",
+    "section": "GRANTS AND AWARDS",
+    "text": "GRANTS AND AWARDS"
+  },
+  {
+    "objectID": "cv.html#certifications",
+    "href": "cv.html#certifications",
+    "title": "CV",
+    "section": "CERTIFICATIONS",
+    "text": "CERTIFICATIONS"
+  },
+  {
+    "objectID": "cv.html#portfolio",
+    "href": "cv.html#portfolio",
+    "title": "CV",
+    "section": "PORTFOLIO",
+    "text": "PORTFOLIO"
   }
 ]
