@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Portfolio Website"
@@ -7,7 +8,8 @@ website:
   description: "This is Rahim's personal Blog."
   navbar:
     right:
-      - about.qmd
+      - text: Blog
+        href: blog.qmd
       - icon: github
         href: https://github.com/rjutha
       - icon: twitter
