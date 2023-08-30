@@ -8,8 +8,11 @@ website:
   description: "This is Rahim's personal Blog."
   navbar:
     right:
+      - href: index.qmd
+        text: Home
       - text: Blog
         href: blog.qmd
+      - about.qmd
       - icon: github
         href: https://github.com/rjutha
       - icon: twitter
