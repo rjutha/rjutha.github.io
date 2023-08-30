@@ -3,6 +3,9 @@
     "blog.qmd": [
       "posts",
       "posts/**/*.qmd"
+    ],
+    "index.qmd": [
+      "B3049D40"
     ]
   }
 }
