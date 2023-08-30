@@ -10,7 +10,7 @@ website:
     right:
       - href: index.qmd
         text: Home
-      - text: Blog
+      - text: Blog Posts
         href: blog.qmd
       - cv.qmd
       - icon: github

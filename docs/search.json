@@ -2,7 +2,7 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Portfolio Website",
+    "title": "Rahim Jutha",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 29, 2023\n\n\n0 min\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2023\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
   },
@@ -30,49 +30,49 @@
   {
     "objectID": "cv.html",
     "href": "cv.html",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "",
     "text": "I am a the best of all time. ( this will be replaced with something cool later."
   },
   {
     "objectID": "cv.html#technical-skills",
     "href": "cv.html#technical-skills",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "TECHNICAL SKILLS",
     "text": "TECHNICAL SKILLS\nR Programming, Python, …"
   },
   {
     "objectID": "cv.html#work-history",
     "href": "cv.html#work-history",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "WORK HISTORY",
     "text": "WORK HISTORY\nJunior Data Analyst\nGlobal Affairs Canada – Ottawa, ON (May 2021 – Dec 2021)\nDuring my 8-month co-op at Global Affairs Canada, I had the opportunity to work as a junior data analyst, contributing to the organization’s data-driven decision-making processes. I gained valuable experience in collecting, analyzing, and interpreting complex datasets to generate insights and support evidence-based strategies. I worked on a small data team and we worked on a variety of different projects both independently and as a team.\n\nDeveloped an interactive map of China to visualize sister-city relationships.\nIdentified unlikely daily word counts in a collection of tweets using a Poisson Process model to uncover trending topics.\nVisualized small datasets as stacked bar charts, density plots, and choropleth maps on short notice as requested by other teams.\nCleaned a historical dataset by combining multiple years of information using a star schema format for easy integration into Power BI.\nConducted a factor analysis to create an index to rank countries on classified metrics.\nDeveloped a logistic regression model to test significance of employee survey results.\n\nTechnical Analyst\nCentre of Operation Excellence, UBC Sauder – Vancouver, BC (May 2020 – Aug 2020)\nAs a Technical Analyst at the Centre of Operation Excellence, UBC Sauder, I designed and implemented advanced logic for ship simulations using Python, optimized code for faster run time, and merged tables using manual string detection techniques using R Code.\n\nDesigned advanced logic for a discrete simulation of ship movements using Python.\nSimulated ship movements in Python using advanced logic.\nSummarized simulation improvements and thoroughly documented code changes.\nOptimized simulation code and cut down run time by over 50%.\nMerged large tables that did not contain a common id using manual string detection."
   },
   {
     "objectID": "cv.html#education",
     "href": "cv.html#education",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "EDUCATION",
     "text": "EDUCATION\nSimon Fraser University, Burnaby, BC (Sept 2017 - June 2023)\n\nBachelor of Science, Major: Statistics."
   },
   {
     "objectID": "cv.html#personal-projects",
     "href": "cv.html#personal-projects",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "PERSONAL PROJECTS",
     "text": "PERSONAL PROJECTS"
   },
   {
     "objectID": "cv.html#grants-and-awards",
     "href": "cv.html#grants-and-awards",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "GRANTS AND AWARDS",
     "text": "GRANTS AND AWARDS\nNSERC Undergraduate Student Research Award (June 2020 - Aug 2020)\n\nResearch award valued at $4,500 awarded."
   },
   {
     "objectID": "cv.html#certifications",
     "href": "cv.html#certifications",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "CERTIFICATIONS",
     "text": "CERTIFICATIONS\nMassachusetts Institute of Technology (June 2019 - July 2019)\n\nOnline Course: Introduction to Computer Science and Programming using Python."
   },
@@ -86,7 +86,7 @@
   {
     "objectID": "cv.html#portfolio-miscellaneous-projects",
     "href": "cv.html#portfolio-miscellaneous-projects",
-    "title": "CV",
+    "title": "About Me/CV",
     "section": "PORTFOLIO & MISCELLANEOUS PROJECTS",
     "text": "PORTFOLIO & MISCELLANEOUS PROJECTS\nAdd smaller projects / school projects here.\nTHEY MUST LINK TO SOMETHING TANGIBLE."
   }
