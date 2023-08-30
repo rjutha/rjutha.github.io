@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Portfolio Website"
-  site-url: XXXXXXXXXXX
+  site-url: https://rjutha.github.io
   description: "This is Rahim's personal Blog."
   navbar:
     right:

@@ -1,1 +1,1 @@
-Sitemap: XXXXXXXXXXX/sitemap.xml
+Sitemap: https://rjutha.github.io/sitemap.xml
