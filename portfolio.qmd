@@ -1,0 +1,12 @@
+---
+title: "Portfolio Projects"
+---
+
+## Board Game Dice Distribution Visualizer
+
+[*https://sway.shinyapps.io/Cthulhu-Death-May-Die-Dice-Distributions*](https://sway.shinyapps.io/Cthulhu-Death-May-Die-Dice-Distributions)
+
+#### Summary:
+
+I created a shiny app...
+

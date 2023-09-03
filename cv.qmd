@@ -2,17 +2,27 @@
 title: "About Me/CV"
 ---
 
-I am a the best of all time. ( this will be replaced with something cool later.
+I'm a recent graduate with a Bachelor's degree in Statistics, aspiring to become a proficient data analyst. My experience includes collaborating within data teams to address various data-related challenges. I'm eager to advance my career and take on exciting projects.
 
 ## TECHNICAL SKILLS
 
-R Programming, Python, ...
+### Programming Languages
+
+*R Programming, Shiny, ggplot2, Python, SQL, Power Bi, LaTeX, Github,  SAS, MATLAB, C++, Excel*
+
+### Data Skills
+
+*Data Visualization, Data Cleaning, Database Management, Dashboarding, Mapping, Data Exploration*
+
+### Statistical Skills
+
+*Modelling and Inference, Hypothesis Testing, Experimental Design, A/B Testing, Sample Surveys, Statistical Learning, Bayesian Analysis, Discrete Analysis, Time Series Analysis, Vector Calculus, Linear Algebra*
 
 ## **WORK HISTORY**
 
-**Junior Data Analyst**
+### **Junior Data Analyst**
 
-*Global Affairs Canada – Ottawa, ON* (May 2021 – Dec 2021)
+*Global Affairs Canada – Ottawa, ON (May 2021 – Dec 2021)*
 
 During my 8-month co-op at Global Affairs Canada, I had the opportunity to work as a junior data analyst, contributing to the organization's data-driven decision-making processes. I gained valuable experience in collecting, analyzing, and interpreting complex datasets to generate insights and support evidence-based strategies. I worked on a small data team and we worked on a variety of different projects both independently and as a team.
 
@@ -29,9 +39,9 @@ During my 8-month co-op at Global Affairs Canada, I had the opportunity to work 
 
 - Developed a logistic regression model to test significance of employee survey results.
 
-**Technical Analyst**
+### **Technical Analyst**
 
-*Centre of Operation Excellence, UBC Sauder – Vancouver, BC* (May 2020 – Aug 2020)
+*Centre of Operation Excellence, UBC Sauder – Vancouver, BC (May 2020 – Aug 2020)*
 
 As a Technical Analyst at the Centre of Operation Excellence, UBC Sauder, I designed and implemented advanced logic for ship simulations using Python, optimized code for faster run time, and merged tables using manual string detection techniques using R Code.
 
@@ -47,26 +57,64 @@ As a Technical Analyst at the Centre of Operation Excellence, UBC Sauder, I desi
 
 ## **EDUCATION**
 
-**Simon Fraser University, Burnaby, BC** (Sept 2017 - June 2023)
+### **Bachelor of Science, Statistics Major**
+
+*Simon Fraser University, Burnaby, BC (Sept 2017 - June 2023)*
 
 - Bachelor of Science, Major: Statistics.
 
 ## **PERSONAL PROJECTS**
 
+### **Board Game Dice Distribution Visualizer** 
+
+*RStudio/R Shiny (June 2023)*
+
+[*https://sway.shinyapps.io/Cthulhu-Death-May-Die-Dice-Distributions*](https://sway.shinyapps.io/Cthulhu-Death-May-Die-Dice-Distributions)
+
+- Developed an optimized algorithm to simulate non-standard dice rolls for the popular board game Cthulhu: Death May Die, resulting in an improved gameplay experience.
+
+- Created an engaging and visually appealing Shiny App utilizing custom themes and fonts.
+
+- Implemented interactive features that enable users to effortlessly modify parameters and access information.
+
 ## GRANTS AND AWARDS
 
-**NSERC Undergraduate Student Research Award** (June 2020 - Aug 2020)
+**NSERC Undergraduate Student Research Award** *(June 2020 - Aug 2020)*
 
 - Research award valued at $4,500 awarded.
 
 ## CERTIFICATIONS
 
-**Massachusetts Institute of Technology** (June 2019 - July 2019)
+**Massachusetts Institute of Technology** *(June 2019 - July 2019)*
 
 - Online Course: Introduction to Computer Science and Programming using Python.
 
 ## **PORTFOLIO & MISCELLANEOUS PROJECTS**
 
-Add smaller projects / school projects here. 
+#### A Selection of smaller-scale portfolio items and miscellaneous projects.
 
-THEY MUST LINK TO SOMETHING TANGIBLE.
+### **Marvel Movies Data Exploration**
+
+*RStudio (Feb 2020)*
+
+[https://rjutha.github.io/MCU-Movie-Project](https://rjutha.github.io/MCU-Movie-Project)
+
+- Scraped movie revenue, profits, and ratings from Wikipedia.
+
+- Brainstormed research questions like whether the gross profit margins have increased.
+
+- Cleaned the data and created plots to visualize trends to answer project questions.
+
+- Visualized metrics like historical profitability, production costs, and movie ratings.
+
+### **International Tourism Dashboard** 
+
+*RStudio (June 2023)*
+
+[https://rjutha.github.io/International-Tourism-Data-Project](https://rjutha.github.io/International-Tourism-Data-Project)
+
+- Cleaned Excel sheets from World Bank using Tidyverse R functions.
+
+- Created interactive choropleth maps incorporating tooltips and zoom functionality.
+
+- Summarized visualizations using Flexdashboard to enhance accessibility and sharing.

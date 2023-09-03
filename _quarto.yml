@@ -13,6 +13,7 @@ website:
       - text: Blog Posts
         href: blog.qmd
       - cv.qmd
+      - portfolio.qmd
       - icon: github
         href: https://github.com/rjutha
       - icon: twitter
