@@ -2,11 +2,31 @@
 title: "Portfolio Projects"
 ---
 
-## Board Game Dice Distribution Visualizer
+## **Board Game Dice Distribution Visualizer**
 
 [*https://sway.shinyapps.io/Cthulhu-Death-May-Die-Dice-Distributions*](https://sway.shinyapps.io/Cthulhu-Death-May-Die-Dice-Distributions)
 
-#### Summary:
+#### Summary
 
-I created a shiny app...
+I developed a Shiny app for the purpose of simulating intricate dice rolls in the board game Cthulhu: Death May Die. This user-friendly app lets you choose the specific roll you wish to observe, and it then calculates the estimated likelihood of that outcome. This tool proves invaluable during gameplay, particularly as the calculations can be quite challenging.
+
+## **Tidy Tuesday**
+
+[*https://github.com/rjutha/Tidy-Tuesday*](https://github.com/rjutha/Tidy-Tuesday)
+
+#### Summary
+
+In this repository, you'll discover my contributions to Tidy Tuesday, a weekly social data initiative hosted by the R4DS Online Learning Community. The essence of this event lies in the sharing of a new dataset each week, from which participants create complementary visualizations. Engaging in this activity serves as valuable practice and offers inspiration for upcoming projects.
+
+## **Comparing Parametric and Non-parametric Tests**
+
+[*https://github.com/rjutha/Comparing-Parametric-and-Non-Parametric-Tests*](https://github.com/rjutha/Comparing-Parametric-and-Non-Parametric-Tests/)
+
+#### Summary 
+
+The goals of this project was to practice technical writing, learn LaTex, and introduce myself to reading statistic papers. This was originally a short paper I wrote as a final project to one of my classes. I chose a simple topic that I had interest in and had a lot of fun writing the paper. I also was able to learn how to cite other papers in LaTex using Overleaf as an IDE.
+
+#### Improvements
+
+A great addition I would like to make to the paper is to add some coding examples and integrate them into the paper. This would add a great visual interpretation of the results I discuss in the paper
 

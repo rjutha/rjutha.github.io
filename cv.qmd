@@ -4,17 +4,17 @@ title: "About Me/CV"
 
 I'm a recent graduate with a Bachelor's degree in Statistics, aspiring to become a proficient data analyst. My experience includes collaborating within data teams to address various data-related challenges. I'm eager to advance my career and take on exciting projects.
 
-## TECHNICAL SKILLS
+## **TECHNICAL SKILLS**
 
-### Programming Languages
+### **Programming Languages**
 
 *R Programming, Shiny, ggplot2, Python, SQL, Power Bi, LaTeX, Github,  SAS, MATLAB, C++, Excel*
 
-### Data Skills
+### **Data Skills**
 
 *Data Visualization, Data Cleaning, Database Management, Dashboarding, Mapping, Data Exploration*
 
-### Statistical Skills
+### **Statistical Skills**
 
 *Modelling and Inference, Hypothesis Testing, Experimental Design, A/B Testing, Sample Surveys, Statistical Learning, Bayesian Analysis, Discrete Analysis, Time Series Analysis, Vector Calculus, Linear Algebra*
 
@@ -77,13 +77,13 @@ As a Technical Analyst at the Centre of Operation Excellence, UBC Sauder, I desi
 
 - Implemented interactive features that enable users to effortlessly modify parameters and access information.
 
-## GRANTS AND AWARDS
+## **GRANTS AND AWARDS**
 
 **NSERC Undergraduate Student Research Award** *(June 2020 - Aug 2020)*
 
 - Research award valued at $4,500 awarded.
 
-## CERTIFICATIONS
+## **CERTIFICATIONS**
 
 **Massachusetts Institute of Technology** *(June 2019 - July 2019)*
 
@@ -118,3 +118,11 @@ As a Technical Analyst at the Centre of Operation Excellence, UBC Sauder, I desi
 - Created interactive choropleth maps incorporating tooltips and zoom functionality.
 
 - Summarized visualizations using Flexdashboard to enhance accessibility and sharing.
+
+## **Comparing Parametric and Non-parametric Tests**
+
+*LaTeX (March 2020)*
+
+[*https://github.com/rjutha/Comparing-Parametric-and-Non-Parametric-Tests*](https://github.com/rjutha/Comparing-Parametric-and-Non-Parametric-Tests/)
+
+The goals of this project was to practice technical writing, learn LaTex, and introduce myself to reading statistic papers. This was originally a short paper I wrote as a final project to one of my classes. I chose a simple topic that I had interest in and had a lot of fun writing the paper. I also was able to learn how to cite other papers in LaTex using Overleaf as an IDE.
