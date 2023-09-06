@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Bayesian">Bayesian <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data-Viz">Data-Viz <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Shiny">Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TidyTuesday">TidyTuesday <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -188,7 +188,10 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1693957021454" data-listing-reading-time-sort="0.015">
+<div class="quarto-post image-right" data-index="0" data-categories="Data-Viz,R,TidyTuesday,Shiny,Bayesian" data-listing-date-sort="1693897200000" data-listing-file-modified-sort="1693962141308" data-listing-reading-time-sort="0.015">
+<div class="thumbnail">
+<p><a href="./posts/2023-08-15-Spam/index.html"> <img src="./posts/2023-08-15-Spam/featured.png" class="thumnail-image"> </a></p>
+</div>
 <div class="body">
 <a href="./posts/2023-08-15-Spam/index.html">
 <h3 class="no-anchor listing-title">
@@ -197,42 +200,45 @@ A Simple brms Model for predicting spam emails
 <div class="listing-subtitle">
 
 </div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data-Viz'); return false;">
+Data-Viz
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TidyTuesday'); return false;">
+TidyTuesday
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Shiny'); return false;">
+Shiny
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Bayesian'); return false;">
+Bayesian
+</div>
+</div>
+<a href="./posts/2023-08-15-Spam/index.html">
 <div class="listing-description">
-
+<p>Usings BRMS and Shiny to create an interactive spam prediction app.</p>
 </div>
 </a>
 </div>
 <div class="metadata">
 <a href="./posts/2023-08-15-Spam/index.html">
+<div class="listing-date">
+Sep 5, 2023
+</div>
 <div class="listing-reading-time">
 0 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1693955408382" data-listing-reading-time-sort="4.895">
-<div class="body">
-<a href="./posts/2023-08-15-Spam/model.html">
-<h3 class="no-anchor listing-title">
-A Simple brms Model for predicting spam emails
-</h3>
-<div class="listing-subtitle">
-
+<div class="quarto-post image-right" data-index="1" data-categories="news,code,analysis" data-listing-date-sort="1693292400000" data-listing-file-modified-sort="1693362779550" data-listing-reading-time-sort="0.045">
+<div class="thumbnail">
+<p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/image.jpg" class="thumnail-image"> </a></p>
 </div>
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2023-08-15-Spam/model.html">
-<div class="listing-reading-time">
-4 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="news,code,analysis" data-listing-date-sort="1693292400000" data-listing-file-modified-sort="1693362779550" data-listing-reading-time-sort="0.045">
 <div class="body">
 <a href="./posts/post-with-code/index.html">
 <h3 class="no-anchor listing-title">
@@ -270,7 +276,10 @@ Aug 29, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="news" data-listing-date-sort="1693033200000" data-listing-file-modified-sort="1693362779547" data-listing-reading-time-sort="0.16">
+<div class="quarto-post image-right" data-index="2" data-categories="news" data-listing-date-sort="1693033200000" data-listing-file-modified-sort="1693362779547" data-listing-reading-time-sort="0.16">
+<div class="thumbnail">
+<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/thumbnail.jpg" class="thumnail-image"> </a></p>
+</div>
 <div class="body">
 <a href="./posts/welcome/index.html">
 <h3 class="no-anchor listing-title">

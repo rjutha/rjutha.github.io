@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Rahim Jutha",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nA Simple brms Model for predicting spam emails\n\n\n\n\n\n\n\n\n\n\n\n\n0 min\n\n\n\n\n\n\n\n\nA Simple brms Model for predicting spam emails\n\n\n\n\n\n\n\n\n\n\n\n\n4 min\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 29, 2023\n\n\n0 min\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2023\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nA Simple brms Model for predicting spam emails\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nUsings BRMS and Shiny to create an interactive spam prediction app.\n\n\n\n\n\n\nSep 5, 2023\n\n\n0 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 29, 2023\n\n\n0 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2023\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -124,5 +124,12 @@
     "title": "About Me/CV",
     "section": "Comparing Parametric and Non-parametric Tests",
     "text": "Comparing Parametric and Non-parametric Tests\nLaTeX (March 2020)\nhttps://github.com/rjutha/Comparing-Parametric-and-Non-Parametric-Tests\nThe goals of this project was to practice technical writing, learn LaTex, and introduce myself to reading statistic papers. This was originally a short paper I wrote as a final project to one of my classes. I chose a simple topic that I had interest in and had a lot of fun writing the paper. I also was able to learn how to cite other papers in LaTex using Overleaf as an IDE."
+  },
+  {
+    "objectID": "posts/2023-08-15-Spam/index.html",
+    "href": "posts/2023-08-15-Spam/index.html",
+    "title": "A Simple brms Model for predicting spam emails",
+    "section": "",
+    "text": "CitationBibTeX citation:@online{jutha2023,\n  author = {Rahim Jutha and Rahim Jutha},\n  title = {A {Simple} Brms {Model} for Predicting Spam Emails},\n  date = {2023-09-05},\n  url = {https://rjutha.github.io/posts/2023-08-15-Spam/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nRahim Jutha, and Rahim Jutha. 2023. “A Simple Brms Model for\nPredicting Spam Emails.” September 5, 2023. https://rjutha.github.io/posts/2023-08-15-Spam/."
   }
 ]

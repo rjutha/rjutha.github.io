@@ -10,7 +10,44 @@
 <atom:link href="https://rjutha.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Rahim&#39;s personal Blog.</description>
 <generator>quarto-1.2.475</generator>
-<lastBuildDate>Tue, 29 Aug 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 05 Sep 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>A Simple brms Model for predicting spam emails</title>
+  <dc:creator>Rahim Jutha</dc:creator>
+  <dc:creator>Rahim Jutha</dc:creator>
+  <link>https://rjutha.github.io/posts/2023-08-15-Spam/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+<iframe src="https://sway.shinyapps.io/Spam/" width="100%" height="400px" data-external="1">
+</iframe>
+</div>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jutha2023,
+  author = {Rahim Jutha and Rahim Jutha},
+  title = {A {Simple} Brms {Model} for Predicting Spam Emails},
+  date = {2023-09-05},
+  url = {https://rjutha.github.io/posts/2023-08-15-Spam/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jutha2023" class="csl-entry quarto-appendix-citeas">
+Rahim Jutha, and Rahim Jutha. 2023. <span>“A Simple Brms Model for
+Predicting Spam Emails.”</span> September 5, 2023. <a href="https://rjutha.github.io/posts/2023-08-15-Spam/">https://rjutha.github.io/posts/2023-08-15-Spam/</a>.
+</div></div></section></div> ]]></description>
+  <category>Data-Viz</category>
+  <category>R</category>
+  <category>TidyTuesday</category>
+  <category>Shiny</category>
+  <category>Bayesian</category>
+  <guid>https://rjutha.github.io/posts/2023-08-15-Spam/index.html</guid>
+  <pubDate>Tue, 05 Sep 2023 07:00:00 GMT</pubDate>
+  <media:content url="https://rjutha.github.io/posts/2023-08-15-Spam/featured.png" medium="image" type="image/png" height="72" width="144"/>
+</item>
 <item>
   <title>Post With Code</title>
   <dc:creator>Harlow Malloc</dc:creator>

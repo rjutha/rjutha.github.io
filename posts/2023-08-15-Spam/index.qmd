@@ -1,5 +1,17 @@
 ---
 title: "A Simple brms Model for predicting spam emails"
+description: "Usings BRMS and Shiny to create an interactive spam prediction app."
+twitter-card:
+  image: "featured.png"
+author:
+  - name: Rahim Jutha
+    url: https://rjutha.github.io/
+date: 09-05-2023
+categories: [Data-Viz, R, TidyTuesday, Shiny, Bayesian] # self-defined categories
+citation:
+  url: https://rjutha.github.io/posts/2023-08-15-Spam/
+image: "featured.png"
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready
 ---
 
 ```{r}
