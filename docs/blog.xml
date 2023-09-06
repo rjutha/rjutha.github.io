@@ -12,8 +12,7 @@
 <generator>quarto-1.2.475</generator>
 <lastBuildDate>Tue, 05 Sep 2023 07:00:00 GMT</lastBuildDate>
 <item>
-  <title>A simple brms model for predicting spam emails</title>
-  <dc:creator>Rahim Jutha</dc:creator>
+  <title>Tidy Tuesday: A simple brms model for predicting spam emails</title>
   <dc:creator>Rahim Jutha</dc:creator>
   <link>https://rjutha.github.io/posts/2023-08-15-Spam/index.html</link>
   <description><![CDATA[ 
@@ -23,15 +22,15 @@
 
 <section id="creating-a-shiny-ui-in-a-quarto-document" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-shiny-ui-in-a-quarto-document">Creating a Shiny UI in a Quarto document</h2>
-<p>For this week’s Tidy Tuesday I to experiment with integrating shiny widgets in Quarto files. I took inspiration from Albert Rapp’s <a href="https://3mw.albert-rapp.de/p/shiny-and-quarto">article</a> possibilities the possibilities.</p>
+<p>For this week’s Tidy Tuesday I experimented with integrating shiny widgets in Quarto files. I took inspiration from Albert Rapp’s <a href="https://3mw.albert-rapp.de/p/shiny-and-quarto">article</a>, <strong>3MW (Combining Shiny and Quarto)</strong>, which introduced the idea to me of using Quarto instead of R Markdown <span class="citation" data-cites="Rapp2023">(Rapp 2023)</span>. <a href="https://quarto.org/">Quarto</a> is an open-source scientific and technical publishing system that utilizes markdown to produce production quality articles, presentations, websites, etc.</p>
 </section>
 <section id="using-quarto-as-an-alternative-to-r-markdown" class="level2">
 <h2 class="anchored" data-anchor-id="using-quarto-as-an-alternative-to-r-markdown">Using Quarto as an alternative to R Markdown</h2>
-<p>I’m not aware of all the major differences between Quarto and R Markdown but I’ve been experimenting with Quarto more recently, so much so that I created this blog. I’m enjoying the aesthetic and customization of Quarto and plan to incorporate it into my workflow. Noteworthy features for me so far are table of contents, collapsible code blocks, and embedding tools make for a clean UI. It’s also interesting that Quarto can be used for projects coded in other languages like Python further expanding its versatility.</p>
+<p>I’m not aware of all the major differences between Quarto and R Markdown but I’ve been experimenting with Quarto more recently, so much so that I created this blog. I’m enjoying the aesthetic and customization of Quarto and plan to incorporate it into my workflow. I’ve been reading up on all the features on their <a href="https://quarto.org/docs/computations/r.html">website</a> that they’ve added to boost functionality <span class="citation" data-cites="Quarto2023">(Quarto 2023)</span>. Noteworthy features for me so far are the <strong>table of contents</strong>, <strong>collapsible code blocks</strong>, and <strong>embedding tools</strong> which combined together generate a clean display. It’s also interesting that Quarto can be used for projects coded in other languages like Python further expanding its versatility.</p>
 </section>
 <section id="hosting-on-shinyapps.io" class="level2">
 <h2 class="anchored" data-anchor-id="hosting-on-shinyapps.io">Hosting on shinyapps.io</h2>
-<p>Since the website contains interactive shiny widgets, they cannot be rendered on github pages. Because of this I hosted the app on shinyapps.io and embedded the link below. The app can be viewed via this [link](https://sway.shinyapps.io/Spam/.</p>
+<p>Since the website contains interactive shiny widgets, they cannot be rendered on github pages. To share the document I hosted the app on <a href="https://www.shinyapps.io/">shinyapps.io</a> and embedded the link below. The app can be viewed via this <a href="https://sway.shinyapps.io/Spam/">link</a>. The website contains a short and sweet model building task and allows users to input their own observation for prediction.</p>
 <div class="cell">
 <iframe src="https://sway.shinyapps.io/Spam/" width="100%" height="400px" data-external="1">
 </iframe>
@@ -39,23 +38,32 @@
 </section>
 <section id="final-remarks" class="level2">
 <h2 class="anchored" data-anchor-id="final-remarks">Final Remarks</h2>
-<p>Combining Quarto and Shiny together is relatively simple and provides a great way to improve the overall look and practicality.</p>
+<p>Integrating Quarto and Shiny is a straightforward process that enhances both aesthetics and functionality, making it an excellent choice for enhancing a project’s usability. I’m eager to delve deeper into customizing it further with HTML and CSS themes, as well as learning more ways to take advantage of the framework of Quarto.</p>
 </section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Quarto2023" class="csl-entry">
+Quarto. 2023. <span>“Guide - Computations - Using <span>R</span>).”</span> <a href="https://quarto.org/docs/computations/r.html">https://quarto.org/docs/computations/r.html</a>.
+</div>
+<div id="ref-Rapp2023" class="csl-entry">
+Rapp, Albert. 2023. <span>“3MW (Combining Shiny and Quarto).”</span> <a href="https://3mw.albert-rapp.de/p/shiny-and-quarto">https://3mw.albert-rapp.de/p/shiny-and-quarto</a>.
+</div>
+</div>
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jutha2023,
-  author = {Rahim Jutha and Rahim Jutha},
-  title = {A Simple Brms Model for Predicting Spam Emails},
+  author = {Rahim Jutha},
+  title = {Tidy {Tuesday:} {A} Simple Brms Model for Predicting Spam
+    Emails},
   date = {2023-09-05},
   url = {https://rjutha.github.io/posts/2023-08-15-Spam/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jutha2023" class="csl-entry quarto-appendix-citeas">
-Rahim Jutha, and Rahim Jutha. 2023. <span>“A Simple Brms Model for
+Rahim Jutha. 2023. <span>“Tidy Tuesday: A Simple Brms Model for
 Predicting Spam Emails.”</span> September 5, 2023. <a href="https://rjutha.github.io/posts/2023-08-15-Spam/">https://rjutha.github.io/posts/2023-08-15-Spam/</a>.
 </div></div></section></div> ]]></description>
   <category>Data-Viz</category>
