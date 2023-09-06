@@ -1,5 +1,5 @@
 ---
-title: "A Simple brms Model for predicting spam emails"
+title: "A simple brms model for predicting spam emails"
 description: "Usings BRMS and Shiny to create an interactive spam prediction app."
 twitter-card:
   image: "featured.png"
@@ -14,8 +14,27 @@ image: "featured.png"
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready
 ---
 
+## Creating a Shiny UI in a Quarto document
+
+For this week's Tidy Tuesday I to experiment with integrating shiny widgets in Quarto files. I took inspiration from Albert Rapp's [article](https://3mw.albert-rapp.de/p/shiny-and-quarto) possibilities the possibilities.
+
+## Using Quarto as an alternative to R Markdown
+
+I'm not aware of all the major differences between Quarto and R Markdown but I've been experimenting with Quarto more recently, so much so that I created this blog. I'm enjoying the aesthetic and customization of Quarto and plan to incorporate it into my workflow. Noteworthy features for me so far are  table of contents, collapsible code blocks, and embedding tools make for a clean UI. It's also interesting that Quarto can be used for projects coded in other languages like Python further expanding its versatility.
+
+## Hosting on shinyapps.io
+
+Since the website contains interactive shiny widgets, they cannot be rendered on github pages. Because of this I hosted the app on shinyapps.io and embedded the link below. The app can be viewed via this [link](https://sway.shinyapps.io/Spam/.
+
 ```{r}
 #| echo: false
 #| out-width: 100%
 knitr::include_url("https://sway.shinyapps.io/Spam/")
 ```
+
+## Final Remarks
+
+Combining Quarto and Shiny together is relatively simple and provides a great way to improve the overall look and practicality.  
+
+## Resources
+
