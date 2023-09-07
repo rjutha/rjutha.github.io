@@ -12,7 +12,7 @@
 <generator>quarto-1.2.475</generator>
 <lastBuildDate>Tue, 05 Sep 2023 07:00:00 GMT</lastBuildDate>
 <item>
-  <title>Tidy Tuesday: A simple brms model for predicting spam emails</title>
+  <title>Tidy Tuesday Week 33: A simple brms model for predicting spam emails</title>
   <dc:creator>Rahim Jutha</dc:creator>
   <link>https://rjutha.github.io/posts/2023-08-15-Spam/index.html</link>
   <description><![CDATA[ 
@@ -56,14 +56,14 @@ Rapp, Albert. 2023. <span>“3MW (Combining Shiny and Quarto).”</span> <a href
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jutha2023,
   author = {Rahim Jutha},
-  title = {Tidy {Tuesday:} {A} Simple Brms Model for Predicting Spam
-    Emails},
+  title = {Tidy {Tuesday} {Week} 33: {A} Simple Brms Model for
+    Predicting Spam Emails},
   date = {2023-09-05},
   url = {https://rjutha.github.io/posts/2023-08-15-Spam/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jutha2023" class="csl-entry quarto-appendix-citeas">
-Rahim Jutha. 2023. <span>“Tidy Tuesday: A Simple Brms Model for
+Rahim Jutha. 2023. <span>“Tidy Tuesday Week 33: A Simple Brms Model for
 Predicting Spam Emails.”</span> September 5, 2023. <a href="https://rjutha.github.io/posts/2023-08-15-Spam/">https://rjutha.github.io/posts/2023-08-15-Spam/</a>.
 </div></div></section></div> ]]></description>
   <category>Data-Viz</category>
@@ -74,33 +74,6 @@ Predicting Spam Emails.”</span> September 5, 2023. <a href="https://rjutha.git
   <guid>https://rjutha.github.io/posts/2023-08-15-Spam/index.html</guid>
   <pubDate>Tue, 05 Sep 2023 07:00:00 GMT</pubDate>
   <media:content url="https://rjutha.github.io/posts/2023-08-15-Spam/featured.png" medium="image" type="image/png" height="72" width="144"/>
-</item>
-<item>
-  <title>Post With Code</title>
-  <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://rjutha.github.io/posts/post-with-code/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>This is a post with executable code.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="dv" style="color: #AD0000;">1</span> <span class="sc" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-
-
-
- ]]></description>
-  <category>news</category>
-  <category>code</category>
-  <category>analysis</category>
-  <guid>https://rjutha.github.io/posts/post-with-code/index.html</guid>
-  <pubDate>Tue, 29 Aug 2023 07:00:00 GMT</pubDate>
-  <media:content url="https://rjutha.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Welcome To My Blog</title>

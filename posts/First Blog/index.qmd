@@ -1,0 +1,24 @@
+---
+title: "First Blog Post"
+description: "Creating a Quarto Blog: My first blog post"
+# bibliography: resource.bib
+twitter-card:
+  image: "featured.png"
+author:
+  - name: Rahim Jutha
+    url: https://rjutha.github.io/
+date: 09-05-2023
+categories: [Data-Viz, R, TidyTuesday, Shiny, Bayesian] # self-defined categories
+citation:
+  url: https://rjutha.github.io/posts/2023-08-15-Spam/
+image: "featured.png"
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready
+---
+
+Hello there!
+
+Welcome to the first installment of my blog. This post will split into two main talking points. First I'll be talk about the process of what went into creating this website, specifically the resources I relied on and all the obstacles I encountered during deployment. The second topic will be I'll also use used and how and my future plans for the blog, both in the short term and the long term.
+
+![](thumbnail.jpg)
+
+Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.

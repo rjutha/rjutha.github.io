@@ -1,5 +1,5 @@
 ---
-title: "Tidy Tuesday: A simple brms model for predicting spam emails"
+title: "Tidy Tuesday Week 33: A simple brms model for predicting spam emails"
 description: "Usings BRMS and Shiny to create an interactive spam prediction app."
 bibliography: resource.bib
 twitter-card:

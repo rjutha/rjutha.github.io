@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Rahim Jutha",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nTidy Tuesday: A simple brms model for predicting spam emails\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nUsings BRMS and Shiny to create an interactive spam prediction app.\n\n\n\n\n\n\nSep 5, 2023\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nAug 29, 2023\n\n\n0 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2023\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nTidy Tuesday Week 33: A simple brms model for predicting spam emails\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nUsings BRMS and Shiny to create an interactive spam prediction app.\n\n\n\n\n\n\nSep 5, 2023\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2023\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -128,28 +128,28 @@
   {
     "objectID": "posts/2023-08-15-Spam/index.html",
     "href": "posts/2023-08-15-Spam/index.html",
-    "title": "Tidy Tuesday: A simple brms model for predicting spam emails",
+    "title": "Tidy Tuesday Week 33: A simple brms model for predicting spam emails",
     "section": "",
     "text": "For this week’s Tidy Tuesday I experimented with integrating shiny widgets in Quarto files. I took inspiration from Albert Rapp’s article, 3MW (Combining Shiny and Quarto), which introduced the idea to me of using Quarto instead of R Markdown (Rapp 2023). Quarto is an open-source scientific and technical publishing system that utilizes markdown to produce production quality articles, presentations, websites, etc."
   },
   {
     "objectID": "posts/2023-08-15-Spam/index.html#hosting-on-shinyapps.io",
     "href": "posts/2023-08-15-Spam/index.html#hosting-on-shinyapps.io",
-    "title": "Tidy Tuesday: A simple brms model for predicting spam emails",
+    "title": "Tidy Tuesday Week 33: A simple brms model for predicting spam emails",
     "section": "Hosting on shinyapps.io",
     "text": "Hosting on shinyapps.io\nSince the website contains interactive shiny widgets, they cannot be rendered on github pages. To share the document I hosted the app on shinyapps.io and embedded the link below. The app can be viewed via this link. The website contains a short and sweet model building task and allows users to input their own observation for prediction."
   },
   {
     "objectID": "posts/2023-08-15-Spam/index.html#using-quarto-as-an-alternative-to-r-markdown",
     "href": "posts/2023-08-15-Spam/index.html#using-quarto-as-an-alternative-to-r-markdown",
-    "title": "Tidy Tuesday: A simple brms model for predicting spam emails",
+    "title": "Tidy Tuesday Week 33: A simple brms model for predicting spam emails",
     "section": "Using Quarto as an alternative to R Markdown",
     "text": "Using Quarto as an alternative to R Markdown\nI’m not aware of all the major differences between Quarto and R Markdown but I’ve been experimenting with Quarto more recently, so much so that I created this blog. I’m enjoying the aesthetic and customization of Quarto and plan to incorporate it into my workflow. I’ve been reading up on all the features on their website that they’ve added to boost functionality (Quarto 2023). Noteworthy features for me so far are the table of contents, collapsible code blocks, and embedding tools which combined together generate a clean display. It’s also interesting that Quarto can be used for projects coded in other languages like Python further expanding its versatility."
   },
   {
     "objectID": "posts/2023-08-15-Spam/index.html#final-remarks",
     "href": "posts/2023-08-15-Spam/index.html#final-remarks",
-    "title": "Tidy Tuesday: A simple brms model for predicting spam emails",
+    "title": "Tidy Tuesday Week 33: A simple brms model for predicting spam emails",
     "section": "Final Remarks",
     "text": "Final Remarks\nIntegrating Quarto and Shiny is a straightforward process that enhances both aesthetics and functionality, making it an excellent choice for enhancing a project’s usability. I’m eager to delve deeper into customizing it further with HTML and CSS themes, as well as learning more ways to take advantage of the framework of Quarto."
   },
@@ -163,7 +163,7 @@
   {
     "objectID": "posts/2023-08-15-Spam/index.html#references",
     "href": "posts/2023-08-15-Spam/index.html#references",
-    "title": "Tidy Tuesday: A simple brms model for predicting spam emails",
+    "title": "Tidy Tuesday Week 33: A simple brms model for predicting spam emails",
     "section": "References",
     "text": "References\n\n\nQuarto. 2023. “Guide - Computations - Using R).” https://quarto.org/docs/computations/r.html.\n\n\nRapp, Albert. 2023. “3MW (Combining Shiny and Quarto).” https://3mw.albert-rapp.de/p/shiny-and-quarto."
   }
