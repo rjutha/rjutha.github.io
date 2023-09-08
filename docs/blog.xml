@@ -76,25 +76,57 @@ Predicting Spam Emails.”</span> September 5, 2023. <a href="https://rjutha.git
   <media:content url="https://rjutha.github.io/posts/2023-08-15-Spam/featured.png" medium="image" type="image/png" height="72" width="144"/>
 </item>
 <item>
-  <title>Welcome To My Blog</title>
-  <dc:creator>Tristan O&#39;Malley</dc:creator>
-  <link>https://rjutha.github.io/posts/welcome/index.html</link>
+  <title>First Blog Post</title>
+  <dc:creator>Rahim Jutha</dc:creator>
+  <link>https://rjutha.github.io/posts/First Blog/index.html</link>
   <description><![CDATA[ 
 
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="https://rjutha.github.io/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<p>Hello there!</p>
+<p>Welcome to the first installment of my blog. This post will split into two main talking points. First I’ll be talk about the process of what went into creating this website, specifically the resources I relied on and all the obstacles I encountered during deployment. The second topic will be I’ll also use used and how and my future plans for the blog, both in the short term and the long term.</p>
+<section id="why-make-a-quarto-blog-or-a-blog-at-all-for-that-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-make-a-quarto-blog-or-a-blog-at-all-for-that-matter">Why make a Quarto blog or a blog at all for that matter?</h2>
+<p>Blogging in the data science space has become increasingly popular in the last few years. They provide a great space for people to create meaningful space to explain topics, create tutorials, and interact with others. My main reason for wanting to create a blog was to have a place on the internet to show off what I’ve worked on. Not only did I want to create a repository for my projects online I wanted to make something I can document the things I work on and hold myself accountable to finishing them.</p>
+<p><em>HOWEVER</em>, creating a website on my own seemed daunting. I needed to decide the framework for the UI, where to host the website, and what programming language I was going to use to make all this. As someone with limited knowledge in this area, my first instinct was to turn to my friends in Computer Science for guidance. Little did I know, their advice made it even more confusing. That when I decided to do what I usually do when I’m stuck: copy other data scientist.</p>
+<p>In hindsight, looking at what others in my field use to host a blog makes perfect sense. Most data scientist are like me and have little no experience building a website. And so I searched for a way to build a website using the skills I already know and Albert Rapp’s blog post about Quarto Blogs. He created a simple to follow tutorial on how to use Quarto to build a website R. This was perfect for me since R is what I know best and never would have thought that I could use R to build a great website.</p>
+<p>I’m not going to dive into the details of my website building process, I would much rather share all the resources I used along the way. Albert Rapp’s Tutorial is top notch and there’s no point regurgitating an amazing tutorial as my own. Instead of that, I will share a couple other quarto websites I came across my research. I took inspiration from all of these websites and incorporated different aspects into my own.</p>
+<p>this section talk about</p>
+<p>wanted to make a portfolio site -&gt; show off projects but was kinda daunting was simple cause I know R (talk about how it helped)</p>
+<p>talk about albert rapps blog post + show off a couple of the websites I found while exploring resources</p>
+</section>
+<section id="my-plans-to-update-this-blog" class="level2">
+<h2 class="anchored" data-anchor-id="my-plans-to-update-this-blog">My plans to update this blog</h2>
+<p>Short term stuff share things im currently interested share new things I learn in utorial fashion tidy tuesday submissions</p>
+<p>long term stuff</p>
+<p>creating resources I can fall back on -&gt; how to use a specific tool and when to use it Use blog posts to interact withi other data sciencers talk about posting publiclally puts me up to scrutiny and how tis relatively double edged but still very beneficial. (other opinons etc)</p>
+<p>AlSO to hold myself accoutnable</p>
+<p>presenting a problem then solving it</p>
+<p><img src="https://rjutha.github.io/posts/First Blog/thumbnail.jpg" class="img-fluid"></p>
 <p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
 
 
+</section>
 
- ]]></description>
-  <category>news</category>
-  <guid>https://rjutha.github.io/posts/welcome/index.html</guid>
-  <pubDate>Sat, 26 Aug 2023 07:00:00 GMT</pubDate>
-  <media:content url="https://rjutha.github.io/posts/welcome/thumbnail.jpg" medium="image" type="image/jpeg"/>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jutha2023,
+  author = {Rahim Jutha},
+  title = {First {Blog} {Post}},
+  date = {2023-09-05},
+  url = {https://rjutha.github.io/posts/2023-08-15-Spam/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jutha2023" class="csl-entry quarto-appendix-citeas">
+Rahim Jutha. 2023. <span>“First Blog Post.”</span> September 5, 2023. <a href="https://rjutha.github.io/posts/2023-08-15-Spam/">https://rjutha.github.io/posts/2023-08-15-Spam/</a>.
+</div></div></section></div> ]]></description>
+  <category>Data-Viz</category>
+  <category>R</category>
+  <category>TidyTuesday</category>
+  <category>Shiny</category>
+  <category>Bayesian</category>
+  <guid>https://rjutha.github.io/posts/First Blog/index.html</guid>
+  <pubDate>Tue, 05 Sep 2023 07:00:00 GMT</pubDate>
+  <media:content url="https://rjutha.github.io/posts/First Blog/featured.png" medium="image" type="image/png"/>
 </item>
 </channel>
 </rss>

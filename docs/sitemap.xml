@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rjutha.github.io/blog.html</loc>
-    <lastmod>2023-09-07T04:06:00.444Z</lastmod>
+    <lastmod>2023-09-08T22:02:59.552Z</lastmod>
   </url>
   <url>
     <loc>https://rjutha.github.io/posts/post-with-code/index.html</loc>
@@ -27,5 +27,9 @@
   <url>
     <loc>https://rjutha.github.io/posts/2023-08-15-Spam/index.html</loc>
     <lastmod>2023-09-07T04:05:59.968Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rjutha.github.io/posts/First Blog/index.html</loc>
+    <lastmod>2023-09-08T22:02:58.961Z</lastmod>
   </url>
 </urlset>

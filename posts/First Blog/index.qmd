@@ -21,6 +21,34 @@ Welcome to the first installment of my blog. This post will split into two main 
 
 ## Why make a Quarto blog or a blog at all for that matter?
 
+### Placeholder 1
+
+Blogging in the data science space has become increasingly popular in the last few years. They provide a great space for people to create meaningful space to explain topics, create tutorials, and interact with others. My main reason for wanting to create a blog was to have a place on the internet to show off what I've worked on. Not only did I want to create a repository for my projects online I wanted to make something I can document the things I work on and hold myself accountable to finishing them.
+
+*HOWEVER*, creating a website on my own seemed daunting. I needed to decide the framework for the UI, where to host the website, and what programming language I was going to use to make all this. As someone with limited knowledge in this area, my first instinct was to turn to my friends in Computer Science for guidance. Little did I know, their advice made it even more confusing. That when I decided to do what I usually do when I'm stuck: copy other data scientist.
+
+### Placeholder 2
+
+In hindsight, looking at what others in my field use to host a blog makes perfect sense. Most data scientist are like me and have little no experience building a website. And so I searched for a way to build a website using the skills I already know and Albert Rapp's blog post about Quarto Blogs. He created a simple to follow tutorial on how to use Quarto to build a website R. This was perfect for me since R is what I know best and never would have thought that I could use R to build a great website.
+
+I'm not going to dive into the details of my website building process, I would much rather share all the resources I used along the way. Albert Rapp's Tutorial is top notch and there's no point regurgitating an amazing tutorial as my own. Instead of that,  I will share a couple other quarto websites I came across my research. I took inspiration from all of these websites and incorporated different aspects into my own.
+
+### Albert Rapp's Blog Post
+
+TALK ABOUT WHAT I TOOK
+
+EMEBED WEBSITE
+
+### Louise E. Sinks Quarto Blog
+
+https://lsinks.github.io/
+
+### Samamtha Csik
+
+https://samanthacsik.github.io/
+
+### Cynthia Huang
+
 this section
 talk about
 
@@ -43,7 +71,7 @@ long term stuff
 creating resources I can fall back on
 -> how to use a specific tool and when to use it
 Use blog posts to interact withi other data sciencers
-talk about psoting publiclally puts me up to scrutiny and how tis relatively double edged but still very beneficial. (other opinons etc)
+talk about posting publiclally puts me up to scrutiny and how tis relatively double edged but still very beneficial. (other opinons etc)
 
 
 AlSO to hold myself accoutnable

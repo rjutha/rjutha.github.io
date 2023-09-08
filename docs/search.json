@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Rahim Jutha",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nTidy Tuesday Week 33: A simple brms model for predicting spam emails\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nUsings BRMS and Shiny to create an interactive spam prediction app.\n\n\n\n\n\n\nSep 5, 2023\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2023\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nTidy Tuesday Week 33: A simple brms model for predicting spam emails\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nUsings BRMS and Shiny to create an interactive spam prediction app.\n\n\n\n\n\n\nSep 5, 2023\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nFirst Blog Post\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nCreating a Quarto Blog: My first blog post\n\n\n\n\n\n\nSep 5, 2023\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -166,5 +166,26 @@
     "title": "Tidy Tuesday Week 33: A simple brms model for predicting spam emails",
     "section": "References",
     "text": "References\n\n\nQuarto. 2023. “Guide - Computations - Using R).” https://quarto.org/docs/computations/r.html.\n\n\nRapp, Albert. 2023. “3MW (Combining Shiny and Quarto).” https://3mw.albert-rapp.de/p/shiny-and-quarto."
+  },
+  {
+    "objectID": "posts/First Blog/index.html",
+    "href": "posts/First Blog/index.html",
+    "title": "First Blog Post",
+    "section": "",
+    "text": "Hello there!\nWelcome to the first installment of my blog. This post will split into two main talking points. First I’ll be talk about the process of what went into creating this website, specifically the resources I relied on and all the obstacles I encountered during deployment. The second topic will be I’ll also use used and how and my future plans for the blog, both in the short term and the long term."
+  },
+  {
+    "objectID": "posts/First Blog/index.html#why-make-a-quarto-blog-or-a-blog-at-all-for-that-matter",
+    "href": "posts/First Blog/index.html#why-make-a-quarto-blog-or-a-blog-at-all-for-that-matter",
+    "title": "First Blog Post",
+    "section": "Why make a Quarto blog or a blog at all for that matter?",
+    "text": "Why make a Quarto blog or a blog at all for that matter?\nBlogging in the data science space has become increasingly popular in the last few years. They provide a great space for people to create meaningful space to explain topics, create tutorials, and interact with others. My main reason for wanting to create a blog was to have a place on the internet to show off what I’ve worked on. Not only did I want to create a repository for my projects online I wanted to make something I can document the things I work on and hold myself accountable to finishing them.\nHOWEVER, creating a website on my own seemed daunting. I needed to decide the framework for the UI, where to host the website, and what programming language I was going to use to make all this. As someone with limited knowledge in this area, my first instinct was to turn to my friends in Computer Science for guidance. Little did I know, their advice made it even more confusing. That when I decided to do what I usually do when I’m stuck: copy other data scientist.\nIn hindsight, looking at what others in my field use to host a blog makes perfect sense. Most data scientist are like me and have little no experience building a website. And so I searched for a way to build a website using the skills I already know and Albert Rapp’s blog post about Quarto Blogs. He created a simple to follow tutorial on how to use Quarto to build a website R. This was perfect for me since R is what I know best and never would have thought that I could use R to build a great website.\nI’m not going to dive into the details of my website building process, I would much rather share all the resources I used along the way. Albert Rapp’s Tutorial is top notch and there’s no point regurgitating an amazing tutorial as my own. Instead of that, I will share a couple other quarto websites I came across my research. I took inspiration from all of these websites and incorporated different aspects into my own.\nthis section talk about\nwanted to make a portfolio site -> show off projects but was kinda daunting was simple cause I know R (talk about how it helped)\ntalk about albert rapps blog post + show off a couple of the websites I found while exploring resources"
+  },
+  {
+    "objectID": "posts/First Blog/index.html#my-plans-to-update-this-blog",
+    "href": "posts/First Blog/index.html#my-plans-to-update-this-blog",
+    "title": "First Blog Post",
+    "section": "My plans to update this blog",
+    "text": "My plans to update this blog\nShort term stuff share things im currently interested share new things I learn in utorial fashion tidy tuesday submissions\nlong term stuff\ncreating resources I can fall back on -> how to use a specific tool and when to use it Use blog posts to interact withi other data sciencers talk about posting publiclally puts me up to scrutiny and how tis relatively double edged but still very beneficial. (other opinons etc)\nAlSO to hold myself accoutnable\npresenting a problem then solving it\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   }
 ]
