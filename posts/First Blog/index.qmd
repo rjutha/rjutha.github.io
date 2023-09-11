@@ -1,9 +1,9 @@
 ---
-title: "First Blog Post"
+title: "My first blog post"
 description: "Creating a Quarto Blog: My first blog post"
 # bibliography: resource.bib
 twitter-card:
-  image: "featured.png"
+  image: "featured.jpeg"
 author:
   - name: Rahim Jutha
     url: https://rjutha.github.io/
@@ -11,7 +11,7 @@ date: 09-05-2023
 categories: [Data-Viz, R, TidyTuesday, Shiny, Bayesian] # self-defined categories
 citation:
   url: https://rjutha.github.io/posts/2023-08-15-Spam/
-image: "featured.png"
+image: "featured.jpeg"
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready
 ---
 
@@ -35,9 +35,9 @@ I'm not going to dive into the details of my website building process, I would m
 
 ### Albert Rapp's Blog Post
 
-Albert's blog post, **The ultimate guide to starting a Quarto blog**, is a step-by-step tutorial on how to set up a quarto blog, with some blogging tips on the side. If you have experience using R, I don't see you running into significant problems building the website. 
+Albert's blog post, **The ultimate guide to starting a Quarto blog**, is a step-by-step tutorial on how to set up a quarto blog, while offering some blogging tips on the side. If you have experience using R, you'll likely navigate the website-building process smoothly.
 
-One thing Albert doesn't talk about in this post is hosting your blog on github pages. He talks about how to set up hosting on Netflix, but personally I find github pages to be an easier alternative.
+While Albert' provides extensive information on setting up a Quarto blog, one topic he doesn't touch upon is hosting your plot on Github Pages He talks about how to set up hosting on Netlify, but personally I find Github Pages to be an easier alternative, especially if you're new to hosting websites.
 
 ```{r}
 #| echo: false
@@ -45,57 +45,40 @@ One thing Albert doesn't talk about in this post is hosting your blog on github 
 knitr::include_url("https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html")
 ```
 
-### Louise E. Sinks Quarto Blog
+### Louise E. Sinks' Quarto Blog
 
-Gave me the idea to host on github pages. and having an about me/ cv page.
+Louise's blog gave me the idea to host the website on github pages. While I've used it in the past to share HTML files, it never occurred to me to host an entire website on it. Additionally, I was impressed by how Louise structured her site, particularity the inclusion of an **About Me** and **Current Projects** section that highlight her work experience and projects.
 
 
 ```{r}
 #| echo: false
 #| out-width: 100%
-knitr::include_url("https://lsinks.github.io/")
+knitr::include_url("https://lsinks.github.io/currentprojects.html")
 ```
 
-### Samamtha Csik
+### Samamtha Csik's Quarto Blog
 
-TALK ABOTU ASPECTS OF THIS THAT I TOOK FOR MY OWN WEBSTIE
+The main takeaways from Samantha's website for me were the striking aesthetic themes from her article, **Why create presentation slides about blogging when you can just blog about it instead?**. I plan to stylize my own website with custom colours, fonts, and my own personal flair. Additionally, Samantha's post also delves into enhancing blog posts with elements like as citations and bibliography, which I'm eager to add to my own content.
 
 ```{r}
 #| echo: false
 #| out-width: 100%
-knitr::include_url("https://samanthacsik.github.io/")
+knitr::include_url("https://samanthacsik.github.io/posts/2021-09-21-distill-blogs")
 ```
 
-https://samanthacsik.github.io/
+## My plans for this blog
 
-### Cynthia Huang
+This section's existence is to primarily hold myself accountable. By creating this blog, I aim to boost my motivation to complete projects and showcase them here. My ultimate goal is to one day create high-quality resources that I can rely on to reacquaint myself with a tool or technique. This way, I'll have a valuable repository of knowledge at my fingertips.
 
-TALK ABOTU ASPECTS OF THIS THAT I TOOK FOR MY OWN WEBSTIE
-```{r}
-#| echo: false
-#| out-width: 100%
-knitr::include_url("https://www.cynthiahqy.com/")
-```
+For the moment, I plan on making blog posts about areas I'm currently interested in. Recently, I've been working a lot in R shiny and I would love to create some short tutorials on specific challenges I've faced. I believe tutorial-based content thrives on blogs, and its aligns with what O
+,most interested in creating.
 
-## My plans to update this blog
+Another thing I plan to post about are my weekly Tidy Tuesday submissions. Tidy Tuesday is a fun exercise once a week where you create a visualization for a given data set. If you're looking for some interesting data visualization, I highly recommend checking out the #TidyTuesday on twitter.
 
-Short term stuff
-share things im currently interested
-share new things I learn in utorial fashion
-tidy tuesday submissions
+On the side, I have plans to incorporate custom HTML and CSS elements to the website to make it more personalized. Although, I wouldn't call myself an expert in either, I'm confident I'll be able to figure out how to make something nice and share what I learn along the way.
 
-long term stuff
+The final point I'd like to touch upon is how public posting indirectly subjects me to scrutiny, which, surprisingly, I view as a positive aspect. It presents opportunities for valuable learning experiences. Moreover, it opens up channels for interaction with fellow professionals in the field, providing me with a chance to absorb knowledge from them. In essence, this blog is just one big learning experience.
 
-creating resources I can fall back on
--> how to use a specific tool and when to use it
-Use blog posts to interact withi other data sciencers
-talk about posting publiclally puts me up to scrutiny and how tis relatively double edged but still very beneficial. (other opinons etc)
+## Final Remarks
 
-
-AlSO to hold myself accoutnable
-
-presenting a problem then solving it
-
-![](thumbnail.jpg)    
-
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+The journey of creating a Quarto blog has been a fun experience for me. I now have a platform for which I can showcase my work, as well as a place to force myself to uphold quality. If you're on the fence about making one, I would say go for it since its approachable and worth the effort.
