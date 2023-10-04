@@ -1,0 +1,43 @@
+---
+title: "How to enhance AB testing with the Multi-arm Bandit"
+description: "An alternative algorithm for testing that allows for a more rapid decision than traditional apporaches."
+bibliography: resource.bib
+twitter-card:
+  image: "featured.png"
+author:
+  - name: Rahim Jutha
+    url: https://rjutha.github.io/
+date: 10-04-2023
+categories: [Data-Viz, R, TidyTuesday, Shiny, Bayesian] # self-defined categories
+citation:
+  url: https://rjutha.github.io/posts/posts/Multi-Arm%20Bandit%20Algorithm/
+image: "featured.png"
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready
+---
+
+Message to get across
+"Multi-arm bandits offer an approach to testing, especially web testing, that allows explicit optimization and more rapid decision making than the traditional statistical approach to designing experiments " [@psfds]
+
+
+
+CONTENTS
+
+## Introduction
+
+introduce post and what I'm writing about
+(an alternative to ab testing that is very applicable to web testing) providing an example for each approach along the way
+
+## AB testing
+
+Introduce very briefly and provide a simple example.
+Be careful to not to spend too much time in this section since its not the main topic and focus.
+
+## Multi-Arm-Bandito
+introduce algorithm formally
+why its better in web testing context
+simple example (using the psilon-greedy algorithm for an A/B test described in teh text)
+
+##  Thompson’s sampling uses a Bayesian approach:
+
+same concept using a beta prior instead seems better will read about it and provide a breif example
+

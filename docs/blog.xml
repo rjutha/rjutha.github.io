@@ -10,7 +10,62 @@
 <atom:link href="https://rjutha.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Rahim&#39;s personal Blog.</description>
 <generator>quarto-1.2.475</generator>
-<lastBuildDate>Tue, 05 Sep 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 04 Oct 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>How to enhance AB testing with the Multi-arm Bandit</title>
+  <dc:creator>Rahim Jutha</dc:creator>
+  <link>https://rjutha.github.io/posts/Multi-Arm-Bandit-Algorithm/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Message to get across “Multi-arm bandits offer an approach to testing, especially web testing, that allows explicit optimization and more rapid decision making than the traditional statistical approach to designing experiments” <span class="citation" data-cites="psfds">(Peter Bruce 2020)</span></p>
+<p>CONTENTS</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>introduce post and what I’m writing about (an alternative to ab testing that is very applicable to web testing) providing an example for each approach along the way</p>
+</section>
+<section id="ab-testing" class="level2">
+<h2 class="anchored" data-anchor-id="ab-testing">AB testing</h2>
+<p>Introduce very briefly and provide a simple example. Be careful to not to spend too much time in this section since its not the main topic and focus.</p>
+</section>
+<section id="multi-arm-bandito" class="level2">
+<h2 class="anchored" data-anchor-id="multi-arm-bandito">Multi-Arm-Bandito</h2>
+<p>introduce algorithm formally why its better in web testing context simple example (using the psilon-greedy algorithm for an A/B test described in teh text)</p>
+</section>
+<section id="thompsons-sampling-uses-a-bayesian-approach" class="level2">
+<h2 class="anchored" data-anchor-id="thompsons-sampling-uses-a-bayesian-approach">Thompson’s sampling uses a Bayesian approach:</h2>
+<p>same concept using a beta prior instead seems better will read about it and provide a breif example</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-psfds" class="csl-entry">
+Peter Bruce, Peter Gedeck, Andrew Bruce. 2020. <span>“Practical Statistics for Data Scientists, 2nd Edition.”</span> <a href="https://learning.oreilly.com/library/view/practical-statistics-for/9781492072935/">https://learning.oreilly.com/library/view/practical-statistics-for/9781492072935/</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jutha2023,
+  author = {Rahim Jutha},
+  title = {How to Enhance {AB} Testing with the {Multi-arm} {Bandit}},
+  date = {2023-10-04},
+  url = {https://rjutha.github.io/posts/posts/Multi-Arm%20Bandit%20Algorithm/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jutha2023" class="csl-entry quarto-appendix-citeas">
+Rahim Jutha. 2023. <span>“How to Enhance AB Testing with the Multi-Arm
+Bandit.”</span> October 4, 2023. <a href="https://rjutha.github.io/posts/posts/Multi-Arm%20Bandit%20Algorithm/">https://rjutha.github.io/posts/posts/Multi-Arm%20Bandit%20Algorithm/</a>.
+</div></div></section></div> ]]></description>
+  <category>Data-Viz</category>
+  <category>R</category>
+  <category>TidyTuesday</category>
+  <category>Shiny</category>
+  <category>Bayesian</category>
+  <guid>https://rjutha.github.io/posts/Multi-Arm-Bandit-Algorithm/index.html</guid>
+  <pubDate>Wed, 04 Oct 2023 07:00:00 GMT</pubDate>
+  <media:content url="https://rjutha.github.io/posts/Multi-Arm-Bandit-Algorithm/featured.png" medium="image" type="image/png"/>
+</item>
 <item>
   <title>Tidy Tuesday Week 33: A simple brms model for predicting spam emails</title>
   <dc:creator>Rahim Jutha</dc:creator>
@@ -78,7 +133,7 @@ Predicting Spam Emails.”</span> September 5, 2023. <a href="https://rjutha.git
 <item>
   <title>My first blog post</title>
   <dc:creator>Rahim Jutha</dc:creator>
-  <link>https://rjutha.github.io/posts/First Blog/index.html</link>
+  <link>https://rjutha.github.io/posts/First-Post/index.html</link>
   <description><![CDATA[ 
 
 
@@ -143,21 +198,21 @@ Predicting Spam Emails.”</span> September 5, 2023. <a href="https://rjutha.git
   author = {Rahim Jutha},
   title = {My First Blog Post},
   date = {2023-09-05},
-  url = {https://rjutha.github.io/posts/2023-08-15-Spam/},
+  url = {https://rjutha.github.io/posts/First-Post/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jutha2023" class="csl-entry quarto-appendix-citeas">
 Rahim Jutha. 2023. <span>“My First Blog Post.”</span> September 5, 2023.
-<a href="https://rjutha.github.io/posts/2023-08-15-Spam/">https://rjutha.github.io/posts/2023-08-15-Spam/</a>.
+<a href="https://rjutha.github.io/posts/First-Post/">https://rjutha.github.io/posts/First-Post/</a>.
 </div></div></section></div> ]]></description>
   <category>Data-Viz</category>
   <category>R</category>
   <category>TidyTuesday</category>
   <category>Shiny</category>
   <category>Bayesian</category>
-  <guid>https://rjutha.github.io/posts/First Blog/index.html</guid>
+  <guid>https://rjutha.github.io/posts/First-Post/index.html</guid>
   <pubDate>Tue, 05 Sep 2023 07:00:00 GMT</pubDate>
-  <media:content url="https://rjutha.github.io/posts/First Blog/featured.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://rjutha.github.io/posts/First-Post/featured.jpeg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

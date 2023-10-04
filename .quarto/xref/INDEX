@@ -22,5 +22,14 @@
   },
   "posts/First Blog/index.qmd": {
     "index.html": "8818f71c"
+  },
+  "posts/Multi-Arm Bandit Algorithm/index.qmd": {
+    "index.html": "ef2c54a6"
+  },
+  "posts/First-Post/index.qmd": {
+    "index.html": "22e0258f"
+  },
+  "posts/Multi-Arm-Bandit-Algorithm/index.qmd": {
+    "index.html": "ab6a8cb6"
   }
 }
