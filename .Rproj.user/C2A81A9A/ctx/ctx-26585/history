@@ -1,0 +1,512 @@
+contingency_table
+chisq.test(matrix(c(140, 1360, 237, 1263), nrow=2, byrow=TRUE))
+chisq.test(contingency_table)
+chisq.test(matrix(c(140, 1360, 237, 1263), nrow=2, byrow=TRUE))
+contingency_table %>% as_tibble()
+contingency_table
+contingency_table as_tibble(rownames = 'Outcome')
+contingency_table as_tibble(rownames = 'Outcome')
+contingency_table as_tibble(rownames = 'Outcome')
+contingency_table %>% as_tibble(rownames = 'Outcome')
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = c("Advertisement A", "Adverisement B"), names_to = product)
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = c("Advertisement A", "Adverisement B"), names_to = "product")
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = c("Adverisement  A", "Adverisement B"), names_to = "product")
+library(tidyverse)
+library(kableExtra)
+set.seed(423)
+A_sample <- sample(0:1, 1500, replace = TRUE , prob = c(0.9,0.1))
+B_sample <- sample(0:1, 1500, replace = TRUE , prob = c(0.85,0.15))
+contingency_table <-
+tibble(
+Outcome = c('Conversion', 'No Conversion'),
+`Advertisement A` = c(sum(A_sample), 1500 - sum(A_sample)),
+`Advertisement B` = c(sum(B_sample), 1500 - sum(B_sample))
+) %>%
+column_to_rownames("Outcome") %>%
+as.matrix()
+kable(contingency_table) %>%
+kable_styling('basic')
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = c("Advertisement  A", "Advertisement B"), names_to = "product")
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product")
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_bar(aes(x = value, y = product, fill = Outcome))
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome))
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal()
+result <- chisq.test(contingency_table)
+mosaicplot(result$observed, main="Mosaic Plot of Observed Frequencies")
+barplot(cbind(result$observed, result$expected), beside=TRUE, col=c("blue", "red"),
+names.arg=c("Category A", "Category B"),
+legend.text=c("Observed", "Expected"),
+main="Observed vs. Expected Frequencies",
+xlab="Categories", ylab="Frequencies")
+mosaicplot(result$observed, main="Mosaic Plot of Observed Frequencies")
+df <- data.frame(
+Category = c("Category A", "Category B"),
+Observed = result$observed,
+Expected = result$expected
+)
+# Create a bar chart
+ggplot(df, aes(x = Category, y = value, fill = variable)) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Observed vs. Expected Frequencies",
+x = "Categories",
+y = "Frequencies") +
+scale_fill_manual(values = c("Observed" = "blue", "Expected" = "red")) +
+theme_minimal()
+df <- data.frame(
+Category = c("Category A", "Category B"),
+Observed = result$observed
+)
+# Create a mosaic plot
+ggplot(df, aes(x = "", y = Observed, fill = Category)) +
+geom_bar(stat = "identity", position = "fill") +
+coord_polar("y") +
+labs(title = "Mosaic Plot of Observed Frequencies") +
+theme_void()
+df <- data.frame(
+Category = c("Category A", "Category B"),
+Observed = result$observed
+)
+# Create a mosaic plot
+ggplot(df, aes(x = "", y = Observed, fill = Category)) +
+geom_bar(stat = "identity", position = "fill") +
+coord_polar("y") +
+labs(title = "Mosaic Plot of Observed Frequencies") +
+theme_void()
+result$observed
+df
+df <- data.frame(
+Category = c("Category A", "Category B"),
+Observed = result$observed
+)
+df
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip()
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip()
+<code> # A/B TEST # setup  horizon <- 1000L simulations <- 1000L conversionProbabilities <- c(0.05, 0.10, 0.15, 0.20, 0.25)  nTestSample <- 0.5 * horizon clickProb <- rep(NA, simulations) adDistMatrix <- matrix(NA, nrow = simulations,                        ncol = length(conversionProbabilities)) adDistMatrixAB <- matrix(NA, nrow = simulations,                        ncol = length(conversionProbabilities)) # simulation for(i in 1:simulations){   testSample <- sapply(conversionProbabilities,                       function(x) sample(0:1, nTestSample, replace = TRUE, prob = c(1 - x, x)))      testColumns <- (1:length(conversionProbabilities))[-which.max(colSums(testSample))]      p.values <- sapply(testColumns, function(x) prop.test(x = colSums(testSample[, c(x, which.max(colSums(testSample)))]),                                                         n = rep(nTestSample, 2))$p.value)      adsAfterABTest <- (1:length(conversionProbabilities))[- testColumns[which(p.values < 0.05)]]      # now just with the best performing ad(s)   ABSample <- sapply(conversionProbabilities[adsAfterABTest],                        function(x) sample(0:1,                                            round((horizon - nTestSample) * length(conversionProbabilities) /                                                  length(adsAfterABTest), 0),                                                 replace = TRUE, prob = c(1 - x, x)))      clickProbTest <- sum(as.vector(testSample)) / length(unlist(testSample))   clickProbAB <- sum(as.vector(ABSample)) / length(unlist(ABSample))      clickProb[i] <- clickProbTest * (nTestSample / horizon) + clickProbAB * (1 - nTestSample / horizon)      # distribution of which ads were seen over the course of all trials   adDistMatrix[i,] <- rep(1 / length(conversionProbabilities), length(conversionProbabilities))   adDistributionAB <- rep(0, length(conversionProbabilities))   adDistributionAB[adsAfterABTest] <- rep(1 / length(adsAfterABTest), length(adsAfterABTest))   adDistMatrixAB[i,] <- adDistributionAB    } # total payoff ABPayoff <- (nTestSample * clickProbTest) + (nTestSample * clickProbAB) </code>
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = -Outcome)) +
+theme_minimal() +
+coord_flip()
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip()
+# distribution of which ads were seen over the course of all trials
+adDistMatrix[i,] <- rep(1 / length(conversionProbabilities), length(conversionProbabilities))
+source("~/.active-rstudio-document", echo=TRUE)
+source("~/.active-rstudio-document", echo=TRUE)
+source("~/.active-rstudio-document", echo=TRUE)
+install.packages("contextual")
+install.packages('contextual')
+devtools::install_github('Nth-iteration-labs/contextual')
+devtools::install_github('Nth-iteration-labs/contextual')
+install.packages("devtools")
+devtools::install_github('Nth-iteration-labs/contextual')
+library(contextual)
+# EPSILON GREEDY
+horizon <- 1000L
+simulations <- 1000L
+conversionProbabilities <- c(0.05, 0.10, 0.15, 0.20, 0.25)
+bandit <- BasicBernoulliBandit$new(weights = conversionProbabilities)
+policy <- EpsilonGreedyPolicy$new(epsilon = 0.10)
+agent <- Agent$new(policy, bandit)
+historyEG <- Simulator$new(agent, horizon, simulations)$run()
+plot(historyEG, type = "arms",
+legend_labels = c('Ad 1', 'Ad 2', 'Ad 3', 'Ad 4', 'Ad 5'),
+legend_title = 'Epsilon Greedy',
+legend_position = "topright",
+smooth = TRUE)
+summary(historyEG)
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip()
+contingency_table %>% as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip()
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different."
+)
+colors = c('#11f233', 'grey75')
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+)
+colors = c('grey75', '#11f233')
+colors = c('grey75', '#11f233')
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+)
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different."
+)
+colors = c('grey95', '#11f233')
+colors = c('grey95', '#11f233')
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+)
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different."
+)
+colors = c('grey85', '#11f233')
+colors = c('grey85', '#11f233')
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+)
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different."
+)
+colors = c('grey85', '#0ca823')
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+)
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different."
+)
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different.",
+)
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome)) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different.",
+) +
+theme(
+plot.title.position = 'plot'
+)
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome), guide = FALSE) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different.",
+x =NULL
+) +
+theme(
+plot.title.position = 'plot'
+)
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome),
+show.legend = FALSE) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = "A/B Test Results between Advertisement 1 and Advertisement 2",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their Conversion Rates are significantly different.",
+x =NULL
+) +
+theme(
+plot.title.position = 'plot'
+)
+result <- chisq.test(contingency_table)
+result$p.value
+result$p.value
+round(result$p.value,3)
+round(result$p.value,1)
+round(result$p.value,-1)
+round(result$p.value,0.001)
+round(result$p.value,1.239032e-07
+)
+trunc(result$p.value)
+trunc(result$p.value,1)
+trunc(result$p.value,.1)
+floor()
+format.pval(result$p.value)
+format.pval(result$p.value, digits = 2)
+subtitle = 'Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their <span style = "color:{colors[2]}">Converstion Rates</span> are significantly different.'
+title
+subtitle = 'Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their <span style = "color:{colors[2]}">Converstion Rates</span> are significantly different.'
+subtitle
+library(ggtext)
+install.packages("ggtext")
+library(tidyverse)
+library(kableExtra)
+library(ggtext)
+set.seed(423)
+A_sample <- sample(0:1, 1500, replace = TRUE , prob = c(0.9,0.1))
+B_sample <- sample(0:1, 1500, replace = TRUE , prob = c(0.85,0.15))
+contingency_table <-
+tibble(
+Outcome = c('Conversion', 'No Conversion'),
+`Advertisement A` = c(sum(A_sample), 1500 - sum(A_sample)),
+`Advertisement B` = c(sum(B_sample), 1500 - sum(B_sample))
+) %>%
+column_to_rownames("Outcome") %>%
+as.matrix()
+kable(contingency_table) %>%
+kable_styling('basic')
+result <- chisq.test(contingency_table)
+result$p.value
+colors = c('grey85', '#0ca823')
+title = "A/B Test Results show Advertisement A and Advertisement B"
+subtitle = 'Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their <span style = "color:{colors[2]}">Converstion Rates</span> are significantly different.'
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome),
+show.legend = FALSE) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = "A/B Test Results show Advertisement A and Advertisement B",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their <Conversion Rates are significantly different.",
+x =NULL
+) +
+theme(
+plot.title.position = 'plot',
+plot.subtitle = element_
+)
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome),
+show.legend = FALSE) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = "A/B Test Results show Advertisement A and Advertisement B",
+subtitle = "Both advertisements recieved 1500 customers and a Chi-squared test shows their <Conversion Rates are significantly different.",
+x =NULL
+) +
+theme(
+plot.title.position = 'plot',
+plot.subtitle = element_markdown()
+)
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome),
+show.legend = FALSE) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = title,
+subtitle = subtitle,
+x = NULL,
+y = NULL
+) +
+theme(
+plot.title.position = 'plot',
+plot.subtitle = element_markdown()
+)
+colors[2]
+colors = c('grey85', '#0ca823')
+title = "A/B Test Results show Advertisement A and Advertisement B"
+subtitle = 'Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their <span style = "color:{colors[2]}">Converstion Rates</span> are significantly different.'
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome),
+show.legend = FALSE) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = title,
+subtitle = subtitle,
+x = NULL,
+y = NULL
+) +
+theme(
+plot.title.position = 'plot',
+plot.subtitle = element_markdown()
+)
+colors
+colors[2]
+colors = c('grey85', '#0ca823')
+title = "A/B Test Results show Advertisement A and Advertisement B"
+subtitle = 'Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their <span style = "color:{colors[1]}">Converstion Rates</span> are significantly different.'
+contingency_table %>%
+as_tibble(rownames = 'Outcome') %>%
+pivot_longer(cols = 2:3, names_to = "product") %>%
+mutate(
+Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion'))
+)  %>%
+ggplot() +
+geom_col(aes(x = value, y = product, fill = Outcome),
+show.legend = FALSE) +
+theme_minimal() +
+coord_flip() +
+scale_fill_manual(
+values = colors
+) +
+labs(
+title = title,
+subtitle = subtitle,
+x = NULL,
+y = NULL
+) +
+theme(
+plot.title.position = 'plot',
+plot.subtitle = element_markdown()
+)
+subtitle = glue:glue('Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their <span style = "color:{colors[1]}">Converstion Rates</span> are significantly different.')

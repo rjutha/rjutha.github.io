@@ -1,0 +1,31 @@
+{
+    "id": "15B6BD57",
+    "path": "~/R Projects/Portfolio_Website/posts/Multi-Arm-Bandit-Algorithm/index.qmd",
+    "project_path": "posts/Multi-Arm-Bandit-Algorithm/index.qmd",
+    "type": "quarto_markdown",
+    "hash": "2417162925",
+    "contents": "",
+    "dirty": false,
+    "created": 1696479152385.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "cursorPosition": "86,18",
+        "scrollLine": "78",
+        "rmdVisualModeLocation": "672:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1696485689,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1696485689136,
+    "read_only": false,
+    "read_only_alternatives": []
+}

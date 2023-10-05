@@ -1,0 +1,156 @@
+```{r}
+setwd(here::here())
+library(tidyverse)
+library(ggtext)
+sysfonts::font_add_google("Source Sans Pro")
+
+camcorder::gg_record(
+  dir = 'img',
+  width = 639 * 0.0264583333,
+  height = 932 * 0.0264583333,
+  units = 'cm',
+  bg = 'white'
+)
+```
+
+```{r}
+raw_data <- read_csv('pew_summaries.csv') %>%
+  janitor::clean_names() %>%
+  arrange(us_adults, men) %>%
+  mutate(
+    task = str_wrap(task, 30),
+    task = factor(task, levels = task)
+  )
+
+rearranged_data <- raw_data %>%
+  select(task:men) %>%
+  pivot_longer(
+    cols = 2:3,
+    names_to = 'group',
+    values_to = 'percentage'
+  )
+```
+
+```{r}
+color_palette <- c('women' = '#064a81', 'men' = '#929d37')
+title <- "Views of NASA priorities among men and women"
+subtitle <- '*% of U.S. adults who say each of the following should be a<br>**top priority** for NASA*'
+caption <- 'Note: Respondents who gave other responses or did not give an answer are not shown.\nSource of US adults conducted May 30-June 4, 2023.\n"Americans\' Views of Space: U.S. Role, NASA Priorities and Impact of Companies"'
+
+buffer <- 0.4
+gender_labels <- raw_data %>%
+  mutate(
+    hjust_women = if_else(men >= women, 1 + buffer, 0 - buffer),
+    hjust_men = if_else(women > men, 1 + buffer, 0 - buffer)
+  )
+
+rearranged_data %>%
+  ggplot(aes(x = percentage, y = task, col = group)) +
+  geom_point(size = 4) +
+  geom_richtext(
+    data = gender_labels,
+    aes(x = women, y = task, label = women, hjust = hjust_women),
+    color = color_palette['women'],
+    size = 4,
+    label.color = NA
+  ) +
+    geom_richtext(
+    data = gender_labels,
+    aes(x = men, y = task, label = men, hjust = hjust_men),
+    color = color_palette['men'],
+    size = 4,
+    label.color = NA
+  ) +
+  labs(
+    x = element_blank(),
+    y = element_blank(),
+    title = title,
+    subtitle = subtitle,
+    caption = caption
+  ) +
+  annotate(
+    'text',
+    x = c(45,67),
+    y = 9.5,
+    size = 4,
+    label = names(color_palette) %>% str_to_title(),
+    color = color_palette,
+    fontface = 'bold'
+  ) +
+  annotate(
+    'text',
+    x = -74,
+    y = -0.6,
+    hjust = 0,
+    label = str_to_upper("PEW Research center"),
+    fontface = 'bold',
+    size = 4
+  ) +
+  annotate(
+    'text',
+    x = -9.5,
+    y = -0.6,
+    hjust = 0,
+    label = '(ggplot remake by Rahim Jutha)',
+    fontface = 'bold',
+    size = 4
+  ) +
+  annotate(
+    'rect',
+    xmin = 77.5,
+    xmax = 102.5,
+    ymin = 0.5,
+    ymax = 9.8,
+    fill = 'grey95'
+  ) +
+  annotate(
+    'text',
+    x = 90,
+    y = c(9.5, raw_data$task),
+    label = c('U.S. \nAdults', raw_data$us_adults),
+    lineheight = 1,
+    size = 4,
+    fontface = c('bold', rep('plain', length(raw_data$us_adults)))
+  ) +
+  annotate(
+    'segment',
+    x = -95,
+    xend = 107.5,
+    y = -1,
+    yend = -1
+  ) +
+  annotate(
+    'segment',
+    x = -95,
+    xend = 107.5,
+    y = 11.25,
+    yend = 11.25
+  ) +
+  coord_cartesian(xlim = c(0,95), ylim = c(1,9.25), clip = 'off') +
+  theme_minimal(
+    base_size = 14,
+    base_family = 'Source Sans Pro'
+  ) +
+  scale_x_continuous(breaks = NULL)  +
+  scale_color_manual(values = color_palette) + 
+  theme(
+    legend.position = 'none',
+    plot.title.position = 'plot',
+    plot.margin = margin(t = 0.25, r = 1, b = 0.25, l = 1, unit = 'cm'),
+    plot.caption.position = 'plot',
+    plot.caption = element_text(
+      color = 'grey40', size = 10.5, hjust = 0,
+      margin = margin(t = 0, b = 1.75, unit = 'cm')
+    ),
+    plot.title = element_text(
+      face = 'bold', size = 16,
+      margin = margin(t = 0.75, b = 0.5, unit = 'cm')
+    ),
+    plot.subtitle = element_markdown(
+      size = 14, color = 'grey40', lineheight = 1.25,
+      margin = margin(b = 0.0, unit = 'cm')
+    ),
+    axis.text.y = element_text(face = 'bold'),
+    panel.grid.major = element_line(linetype = 3, color = 'black')
+  )
+```

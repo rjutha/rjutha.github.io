@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Rahim Jutha"
+  site-url: https://rjutha.github.io
+  description: "This is Rahim's personal Blog."
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home
+      - text: Blog Posts
+        href: blog.qmd
+      - cv.qmd
+      - portfolio.qmd
+      - icon: github
+        href: https://github.com/rjutha
+      - icon: twitter
+        href: https://twitter.com/RahimJutha
+      - icon: linkedin
+        href: https://www.linkedin.com/in/rahim-jutha/
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

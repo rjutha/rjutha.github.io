@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Rahim Jutha",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nHow to enhance AB testing with the Multi-arm Bandit\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nAn alternative algorithm for testing that allows for a more rapid decision than traditional apporaches.\n\n\n\n\n\n\nOct 4, 2023\n\n\n0 min\n\n\n\n\n\n\n  \n\n\n\n\nTidy Tuesday Week 33: A simple brms model for predicting spam emails\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nUsings BRMS and Shiny to create an interactive spam prediction app.\n\n\n\n\n\n\nSep 5, 2023\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nMy first blog post\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nCreating a Quarto Blog: My first blog post\n\n\n\n\n\n\nSep 5, 2023\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nHow to enhance A/B testing with the Multi-arm Bandit\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nAn alternative algorithm for testing that leverages updating sampling frequencies for a more rapid decision than traditional apporaches.\n\n\n\n\n\n\nOct 4, 2023\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nTidy Tuesday Week 33: A simple brms model for predicting spam emails\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nUsings BRMS and Shiny to create an interactive spam prediction app.\n\n\n\n\n\n\nSep 5, 2023\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nMy first blog post\n\n\n\n\n\n\n\nData-Viz\n\n\nR\n\n\nTidyTuesday\n\n\nShiny\n\n\nBayesian\n\n\n\n\nCreating a Quarto Blog: My first blog post\n\n\n\n\n\n\nSep 5, 2023\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -275,9 +275,9 @@
   {
     "objectID": "posts/Multi-Arm-Bandit-Algorithm/index.html",
     "href": "posts/Multi-Arm-Bandit-Algorithm/index.html",
-    "title": "How to enhance AB testing with the Multi-arm Bandit",
+    "title": "How to enhance A/B testing with the Multi-arm Bandit",
     "section": "",
-    "text": "Message to get across “Multi-arm bandits offer an approach to testing, especially web testing, that allows explicit optimization and more rapid decision making than the traditional statistical approach to designing experiments” (Peter Bruce 2020)\nCONTENTS"
+    "text": "Hello There!\nToday I’m going to be discussing an algorithm called the Multi-Arm Bandit, which is used in the realm of statistical testing. I came across the algorithm when reading the book “Practical Statistics for Data Scientists”. The book introduced the algorithm as “an approach to testing … that allows explicit optimization and more rapid decision making than the traditional statistical approach to designing experiments” (Peter Bruce 2020). Not only does the algorithm have a fun name, it also has a clear advantage when trying to optimize for the business rather than statistical significance.\nWhen compared to a traditional A/B test, the multi-arm bandit leverages taking advantage of results prior to the completion of an experiment. By utilizing the computing power of modern day tools, sampling can be updated efficiently during the sampling process to reach conclusions faster than traditional methods. An easy comparison to make is how in Bayesian Statistics, updating a prior distribution using evidence to obtain a new posterior distribution is a common idea and is essentially what this algorithm does.\nThe Multi-Arm Bandit algorithm is widely used web design and marketing. This is because the results in these fields are easily measured. Since the core advantage of this algorithm involves being able to alter the sampling process during the experiment, these fields work together nicely with the algorithm.\nFor the remainder of this blog post, I’m going to compare the methods and provide examples to see how they work."
   },
   {
     "objectID": "posts/Multi-Arm-Bandit-Algorithm/index.html#introduction",
@@ -289,22 +289,29 @@
   {
     "objectID": "posts/Multi-Arm-Bandit-Algorithm/index.html#ab-testing",
     "href": "posts/Multi-Arm-Bandit-Algorithm/index.html#ab-testing",
-    "title": "How to enhance AB testing with the Multi-arm Bandit",
-    "section": "AB testing",
-    "text": "AB testing\nIntroduce very briefly and provide a simple example. Be careful to not to spend too much time in this section since its not the main topic and focus."
+    "title": "How to enhance A/B testing with the Multi-arm Bandit",
+    "section": "A/B testing",
+    "text": "A/B testing\nSample our data choose to split evenly …\n\nset.seed(423)\n\nA_sample <- sample(0:1, 1500, replace = TRUE , prob = c(0.9,0.1))\nB_sample <- sample(0:1, 1500, replace = TRUE , prob = c(0.85,0.15))\n\ncontingency_table <-\n  tibble(\n    Outcome = c('Conversion', 'No Conversion'),\n    `Advertisement A` = c(sum(A_sample), 1500 - sum(A_sample)),\n    `Advertisement B` = c(sum(B_sample), 1500 - sum(B_sample))\n  ) %>%\n  column_to_rownames(\"Outcome\") %>%\n  as.matrix()\n\nA_conversion_rate <- contingency_table[1,1] / sum(contingency_table[,1])\nA_conversion_rate_95_moe <- 1.96 * sd(A_sample) / sqrt(1500)\n\nB_conversion_rate <- contingency_table[1,2] / sum(contingency_table[,2])\nB_conversion_rate_95_moe <- 1.96 * sd(B_sample) / sqrt(1500)\n\nkable(contingency_table) %>%\n  kable_styling('basic')\n\n\n\n \n  \n      \n    Advertisement A \n    Advertisement B \n  \n \n\n  \n    Conversion \n    140 \n    237 \n  \n  \n    No Conversion \n    1360 \n    1263 \n  \n\n\n\n\n\nDecide which test to do gonna do chi squared\n\nresult <- chisq.test(contingency_table)\nresult\n\n\n    Pearson's Chi-squared test with Yates' continuity correction\n\ndata:  contingency_table\nX-squared = 27.959, df = 1, p-value = 1.239e-07\n\n\nplot of results i guess\n\n\nCode\ncolors = c('grey92', '#0ca823')\n  \ntitle = glue('A/B Test show Advertisement B <span style = \"color:{colors[2]}\">**Performs Better**</span>.')\n\nsubtitle = glue('Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their <span style = \"color:{colors[2]}\">**Converstion Rates**</span> are<br>significantly different. A sample size of 1500 customers were used for each ad.')\n\n\ncontingency_table %>%\n  as_tibble(rownames = 'Outcome') %>%\n  pivot_longer(cols = 2:3, names_to = \"product\") %>%\n  mutate(\n    Outcome = factor(Outcome, levels = c('No Conversion', 'Conversion')),\n  )  %>%\n  ggplot() +\n  geom_col(aes(x = value, y = product, fill = Outcome),\n           show.legend = FALSE) +\n  theme_minimal() +\n  coord_flip(clip = \"off\") +\n  scale_fill_manual(\n    values = colors\n  ) +\n  labs(\n    title = title,\n    subtitle = subtitle,\n    x = NULL,\n    y = NULL\n    ) +\n  theme(\n    plot.title.position = 'plot',\n    plot.title = element_markdown(size = 18),\n    plot.subtitle = element_markdown(size = 12, lineheight = 1.2, margin = margin(0,0,0.5,0, unit = 'cm')),\n    axis.text.x  = element_blank(),\n    axis.line.x  = element_blank(),\n    axis.text.y  = element_blank(),\n    axis.line.y  = element_blank(),\n    panel.grid = element_blank()\n  ) +\n  annotate(\n    'text',\n    x = 1700,\n    y = 1,\n    size = 5,\n    label = 'Advertisement A'\n  ) +\n    annotate(\n    'text',\n    x = 1700,\n    y = 2,\n    size = 5,\n    label = 'Advertisement B'\n    ) +\n  annotate(\n    'text',\n    x = 750,\n    y = 1,\n    size = 6,\n    label = glue('{percent(A_conversion_rate, accuracy = 0.01)} +/- {percent(A_conversion_rate_95_moe, scale = 100, accuracy = 0.01)}'),\n    color = colors[2],\n    fontface = 'bold'\n  ) +\n  annotate(\n    'text',\n    x = 750,\n    y = 2,\n    size = 6,\n    label = glue('{percent(B_conversion_rate, accuracy = 0.01)} +/- {percent(B_conversion_rate_95_moe, scale = 100, accuracy = 0.01)}'),\n    color = colors[2],\n    fontface = 'bold'\n  )"
   },
   {
     "objectID": "posts/Multi-Arm-Bandit-Algorithm/index.html#multi-arm-bandito",
     "href": "posts/Multi-Arm-Bandit-Algorithm/index.html#multi-arm-bandito",
-    "title": "How to enhance AB testing with the Multi-arm Bandit",
+    "title": "How to enhance A/B testing with the Multi-arm Bandit",
     "section": "Multi-Arm-Bandito",
-    "text": "Multi-Arm-Bandito\nintroduce algorithm formally why its better in web testing context simple example (using the psilon-greedy algorithm for an A/B test described in teh text)"
+    "text": "Multi-Arm-Bandito\nintroduce algorithm formally why its better in web testing context simple example (using the psilon-greedy algorithm for an A/B test described in teh text)\nhttps://www.rdocumentation.org/packages/contextual/versions/0.9.8.4"
   },
   {
     "objectID": "posts/Multi-Arm-Bandit-Algorithm/index.html#thompsons-sampling-uses-a-bayesian-approach",
     "href": "posts/Multi-Arm-Bandit-Algorithm/index.html#thompsons-sampling-uses-a-bayesian-approach",
-    "title": "How to enhance AB testing with the Multi-arm Bandit",
+    "title": "How to enhance A/B testing with the Multi-arm Bandit",
     "section": "Thompson’s sampling uses a Bayesian approach:",
-    "text": "Thompson’s sampling uses a Bayesian approach:\nsame concept using a beta prior instead seems better will read about it and provide a breif example"
+    "text": "Thompson’s sampling uses a Bayesian approach:\nsame concept using a beta prior instead seems better will read about it and provide a breif example\nhttps://www.r-bloggers.com/2019/09/multi-armed-bandits-as-an-a-b-testing-solution/"
+  },
+  {
+    "objectID": "posts/Multi-Arm-Bandit-Algorithm/index.html#set-up-for-examples",
+    "href": "posts/Multi-Arm-Bandit-Algorithm/index.html#set-up-for-examples",
+    "title": "How to enhance A/B testing with the Multi-arm Bandit",
+    "section": "Set-up for examples",
+    "text": "Set-up for examples\nIn order to showcase the different methods I’m going to simulate an example business problem to show the differences between A/B testing and the Multi-Arm Bandit algorithm.\nLet’s say we’re a company wanting to run an experiment to find out which of their 2 advertisements performs best. We decide to run the experiment on the next 3000 customers by showing them a different advertisement and using the results to decide which one to deploy.\nUnbeknownst to us, Advertisement A has a 10% conversion rate and Advertisement B has a 15% conversion rate. These values will allow us to generate a sample for us to make inference on.\n\nLoad Libraries\n\nlibrary(tidyverse)\nlibrary(kableExtra)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(scales)"
   }
 ]

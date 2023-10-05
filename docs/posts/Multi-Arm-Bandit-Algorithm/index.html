@@ -8,9 +8,9 @@
 
 <meta name="author" content="Rahim Jutha">
 <meta name="dcterms.date" content="2023-10-04">
-<meta name="description" content="An alternative algorithm for testing that allows for a more rapid decision than traditional apporaches.">
+<meta name="description" content="An alternative algorithm for testing that leverages updating sampling frequencies for a more rapid decision than traditional apporaches.">
 
-<title>Rahim Jutha - How to enhance AB testing with the Multi-arm Bandit</title>
+<title>Rahim Jutha - How to enhance A/B testing with the Multi-arm Bandit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +23,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -81,10 +144,13 @@ div.csl-indent {
   }
 }</script>
 
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 <link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Rahim Jutha - How to enhance AB testing with the Multi-arm Bandit">
-<meta name="twitter:description" content="An alternative algorithm for testing that allows for a more rapid decision than traditional apporaches.">
+<meta name="twitter:title" content="Rahim Jutha - How to enhance A/B testing with the Multi-arm Bandit">
+<meta name="twitter:description" content="An alternative algorithm for testing that leverages updating sampling frequencies for a more rapid decision than traditional apporaches.">
 <meta name="twitter:image" content="https://rjutha.github.io/posts\Multi-Arm-Bandit-Algorithm\featured.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -146,10 +212,10 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">How to enhance AB testing with the Multi-arm Bandit</h1>
+      <h1 class="title">How to enhance A/B testing with the Multi-arm Bandit</h1>
                   <div>
         <div class="description">
-          An alternative algorithm for testing that allows for a more rapid decision than traditional apporaches.
+          An alternative algorithm for testing that leverages updating sampling frequencies for a more rapid decision than traditional apporaches.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -191,8 +257,11 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#ab-testing" id="toc-ab-testing" class="nav-link" data-scroll-target="#ab-testing">AB testing</a></li>
+  <li><a href="#set-up-for-examples" id="toc-set-up-for-examples" class="nav-link active" data-scroll-target="#set-up-for-examples">Set-up for examples</a>
+  <ul class="collapse">
+  <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link" data-scroll-target="#load-libraries">Load Libraries</a></li>
+  </ul></li>
+  <li><a href="#ab-testing" id="toc-ab-testing" class="nav-link" data-scroll-target="#ab-testing">A/B testing</a></li>
   <li><a href="#multi-arm-bandito" id="toc-multi-arm-bandito" class="nav-link" data-scroll-target="#multi-arm-bandito">Multi-Arm-Bandito</a></li>
   <li><a href="#thompsons-sampling-uses-a-bayesian-approach" id="toc-thompsons-sampling-uses-a-bayesian-approach" class="nav-link" data-scroll-target="#thompsons-sampling-uses-a-bayesian-approach">Thompson’s sampling uses a Bayesian approach:</a></li>
   </ul>
@@ -204,23 +273,179 @@ div.csl-indent {
 
 
 
-<p>Message to get across “Multi-arm bandits offer an approach to testing, especially web testing, that allows explicit optimization and more rapid decision making than the traditional statistical approach to designing experiments” <span class="citation" data-cites="psfds">(<a href="#ref-psfds" role="doc-biblioref">Peter Bruce 2020</a>)</span></p>
-<p>CONTENTS</p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>introduce post and what I’m writing about (an alternative to ab testing that is very applicable to web testing) providing an example for each approach along the way</p>
+<p>Hello There!</p>
+<p>Today I’m going to be discussing an algorithm called the <strong>Multi-Arm Bandit</strong>, which is used in the realm of statistical testing. I came across the algorithm when reading the book <em>“Practical Statistics for Data Scientists”</em>. The book introduced the algorithm as “an approach to testing … that allows explicit optimization and more rapid decision making than the traditional statistical approach to designing experiments” <span class="citation" data-cites="psfds">(<a href="#ref-psfds" role="doc-biblioref">Peter Bruce 2020</a>)</span>. Not only does the algorithm have a fun name, it also has a clear advantage when trying to optimize for the business rather than statistical significance.</p>
+<p>When compared to a traditional A/B test, the multi-arm bandit leverages taking advantage of results prior to the completion of an experiment. By utilizing the computing power of modern day tools, sampling can be updated efficiently during the sampling process to reach conclusions faster than traditional methods. An easy comparison to make is how in <em>Bayesian Statistics</em>, updating a prior distribution using evidence to obtain a new posterior distribution is a common idea and is essentially what this algorithm does.</p>
+<p>The Multi-Arm Bandit algorithm is widely used web design and marketing. This is because the results in these fields are easily measured. Since the core advantage of this algorithm involves being able to alter the sampling process during the experiment, these fields work together nicely with the algorithm.</p>
+<p>For the remainder of this blog post, I’m going to compare the methods and provide examples to see how they work.</p>
+<section id="set-up-for-examples" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-for-examples">Set-up for examples</h2>
+<p>In order to showcase the different methods I’m going to simulate an example business problem to show the differences between A/B testing and the Multi-Arm Bandit algorithm.</p>
+<p>Let’s say we’re a company wanting to run an experiment to find out which of their 2 advertisements performs best. We decide to run the experiment on the next 3000 customers by showing them a different advertisement and using the results to decide which one to deploy.</p>
+<p>Unbeknownst to us, Advertisement A has a 10% conversion rate and Advertisement B has a 15% conversion rate. These values will allow us to generate a sample for us to make inference on.</p>
+<section id="load-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="load-libraries">Load Libraries</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="ab-testing" class="level2">
-<h2 class="anchored" data-anchor-id="ab-testing">AB testing</h2>
-<p>Introduce very briefly and provide a simple example. Be careful to not to spend too much time in this section since its not the main topic and focus.</p>
+<h2 class="anchored" data-anchor-id="ab-testing">A/B testing</h2>
+<p>Sample our data choose to split evenly …</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">423</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>A_sample <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">1500</span>, <span class="at">replace =</span> <span class="cn">TRUE</span> , <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.9</span>,<span class="fl">0.1</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>B_sample <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">1500</span>, <span class="at">replace =</span> <span class="cn">TRUE</span> , <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.85</span>,<span class="fl">0.15</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>contingency_table <span class="ot">&lt;-</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Outcome =</span> <span class="fu">c</span>(<span class="st">'Conversion'</span>, <span class="st">'No Conversion'</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Advertisement A</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">sum</span>(A_sample), <span class="dv">1500</span> <span class="sc">-</span> <span class="fu">sum</span>(A_sample)),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Advertisement B</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">sum</span>(B_sample), <span class="dv">1500</span> <span class="sc">-</span> <span class="fu">sum</span>(B_sample))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="st">"Outcome"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>A_conversion_rate <span class="ot">&lt;-</span> contingency_table[<span class="dv">1</span>,<span class="dv">1</span>] <span class="sc">/</span> <span class="fu">sum</span>(contingency_table[,<span class="dv">1</span>])</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>A_conversion_rate_95_moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sd</span>(A_sample) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">1500</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>B_conversion_rate <span class="ot">&lt;-</span> contingency_table[<span class="dv">1</span>,<span class="dv">2</span>] <span class="sc">/</span> <span class="fu">sum</span>(contingency_table[,<span class="dv">2</span>])</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>B_conversion_rate_95_moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sd</span>(B_sample) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">1500</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(contingency_table) <span class="sc">%&gt;%</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="st">'basic'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Advertisement A </th>
+   <th style="text-align:right;"> Advertisement B </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Conversion </td>
+   <td style="text-align:right;"> 140 </td>
+   <td style="text-align:right;"> 237 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> No Conversion </td>
+   <td style="text-align:right;"> 1360 </td>
+   <td style="text-align:right;"> 1263 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>Decide which test to do gonna do chi squared</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(contingency_table)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  contingency_table
+X-squared = 27.959, df = 1, p-value = 1.239e-07</code></pre>
+</div>
+</div>
+<p>plot of results i guess</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'grey92'</span>, <span class="st">'#0ca823'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>title <span class="ot">=</span> <span class="fu">glue</span>(<span class="st">'A/B Test show Advertisement B &lt;span style = "color:{colors[2]}"&gt;**Performs Better**&lt;/span&gt;.'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>subtitle <span class="ot">=</span> <span class="fu">glue</span>(<span class="st">'Chi-squared test with a p-value of {format.pval(result$p.value, digits = 2)} shows their &lt;span style = "color:{colors[2]}"&gt;**Converstion Rates**&lt;/span&gt; are&lt;br&gt;significantly different. A sample size of 1500 customers were used for each ad.'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>contingency_table <span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">'Outcome'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">names_to =</span> <span class="st">"product"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Outcome =</span> <span class="fu">factor</span>(Outcome, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">'No Conversion'</span>, <span class="st">'Conversion'</span>)),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> product, <span class="at">fill =</span> Outcome),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> colors</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> title,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> subtitle,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">'plot'</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">lineheight =</span> <span class="fl">1.2</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">0</span>, <span class="at">unit =</span> <span class="st">'cm'</span>)),</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x  =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line.x  =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y  =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line.y  =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'text'</span>,</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">1700</span>,</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">1</span>,</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">'Advertisement A'</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">'text'</span>,</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">1700</span>,</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">2</span>,</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">'Advertisement B'</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">'text'</span>,</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">750</span>,</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">1</span>,</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">6</span>,</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">glue</span>(<span class="st">'{percent(A_conversion_rate, accuracy = 0.01)} +/- {percent(A_conversion_rate_95_moe, scale = 100, accuracy = 0.01)}'</span>),</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> colors[<span class="dv">2</span>],</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">'bold'</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">'text'</span>,</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">750</span>,</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">2</span>,</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">6</span>,</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">glue</span>(<span class="st">'{percent(B_conversion_rate, accuracy = 0.01)} +/- {percent(B_conversion_rate_95_moe, scale = 100, accuracy = 0.01)}'</span>),</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> colors[<span class="dv">2</span>],</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">'bold'</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
 </section>
 <section id="multi-arm-bandito" class="level2">
 <h2 class="anchored" data-anchor-id="multi-arm-bandito">Multi-Arm-Bandito</h2>
 <p>introduce algorithm formally why its better in web testing context simple example (using the psilon-greedy algorithm for an A/B test described in teh text)</p>
+<p>https://www.rdocumentation.org/packages/contextual/versions/0.9.8.4</p>
 </section>
 <section id="thompsons-sampling-uses-a-bayesian-approach" class="level2">
 <h2 class="anchored" data-anchor-id="thompsons-sampling-uses-a-bayesian-approach">Thompson’s sampling uses a Bayesian approach:</h2>
 <p>same concept using a beta prior instead seems better will read about it and provide a breif example</p>
+<p>https://www.r-bloggers.com/2019/09/multi-armed-bandits-as-an-a-b-testing-solution/</p>
 
 
 
@@ -232,14 +457,14 @@ Peter Bruce, Peter Gedeck, Andrew Bruce. 2020. <span>“Practical Statistics for
 </div>
 </div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jutha2023,
   author = {Rahim Jutha},
-  title = {How to Enhance {AB} Testing with the {Multi-arm} {Bandit}},
+  title = {How to Enhance {A/B} Testing with the {Multi-arm} {Bandit}},
   date = {2023-10-04},
-  url = {https://rjutha.github.io/posts/posts/Multi-Arm%20Bandit%20Algorithm/},
+  url = {https://rjutha.github.io/posts/posts/Multi-Arm-Bandit-Algorithm/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jutha2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Rahim Jutha. 2023. <span>“How to Enhance AB Testing with the Multi-Arm
-Bandit.”</span> October 4, 2023. <a href="https://rjutha.github.io/posts/posts/Multi-Arm%20Bandit%20Algorithm/">https://rjutha.github.io/posts/posts/Multi-Arm%20Bandit%20Algorithm/</a>.
+Rahim Jutha. 2023. <span>“How to Enhance A/B Testing with the Multi-Arm
+Bandit.”</span> October 4, 2023. <a href="https://rjutha.github.io/posts/posts/Multi-Arm-Bandit-Algorithm/">https://rjutha.github.io/posts/posts/Multi-Arm-Bandit-Algorithm/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

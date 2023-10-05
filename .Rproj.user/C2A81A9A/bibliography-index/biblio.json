@@ -1,0 +1,25 @@
+{
+    "sources": [
+        {
+            "URL": "https://learning.oreilly.com/library/view/practical-statistics-for/9781492072935/",
+            "author": [
+                {
+                    "family": "Peter Bruce",
+                    "given": "Peter Gedeck",
+                    "suffix": "Andrew Bruce"
+                }
+            ],
+            "id": "psfds",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "title": "Practical statistics for data scientists, 2nd edition",
+            "type": ""
+        }
+    ],
+    "project_biblios": []
+}
