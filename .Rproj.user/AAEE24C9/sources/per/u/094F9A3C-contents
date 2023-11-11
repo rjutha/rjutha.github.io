@@ -1,0 +1,8 @@
+library(tidyverse)
+library(spotifyr)
+
+SPOTIFY_CLIENT_ID = ''
+SPOTIFY_CLIENT_SECRET = ''
+SPOTIFY_REDIRECT_URI = ''
+
+access_token <-
